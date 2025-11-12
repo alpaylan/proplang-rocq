@@ -90,7 +90,7 @@ Definition timedRunLoop (max_time : nat)  (cprop : CProp ∅): G TimedResult :=
 		match fuel with
 		| O => ret (mkTimedResult (mkResult discards false passed []) (timePassed start_time current_time))
 		| S fuel' => 
-			res <- genAndRun cprop (Nat.log2 (passed + discards)%nat);;
+			res <- genAndRun cprop (log2 (passed + discards)%nat);;
 			match res with
 			| Normal seed false =>
 				(* Fails *)
@@ -138,7 +138,7 @@ Record PreciseResult := mkPreciseResult {
 		match fuel with
 		| O => ret (mkPreciseResult (mkResult discards false passed []) execution_time generation_time 0 (execution_time + generation_time))
 		| S fuel' => 
-			input <- justGen cprop (Nat.log2 (passed + discards)%nat);;
+			input <- justGen cprop (log2 (passed + discards)%nat);;
 			res <- jusRun cprop input;;
 			match res with
 			| Normal seed false =>
