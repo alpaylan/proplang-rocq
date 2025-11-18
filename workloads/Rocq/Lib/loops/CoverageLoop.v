@@ -48,16 +48,39 @@ Proof. dec_eq. Defined.
 
 Inductive Desc (C:Type) :=
 | Top
-| Cons (c:C) (ds:list (Desc C)) *)
+| Cons (c:C) (ds:list (Desc C))
 | Next (d:Desc C)
 | Eventually (d:Desc C).
- 
 
-
-#[local] Instance Dec_Eq_Desc {C} `{Dec_Eq C} : Dec_Eq (Desc C).
-Proof. dec_eq. Defined.
-
-Print Dec_Eq_Desc. *)
+Fixpoint Desc_eq {C} `{Dec_Eq C} (c1 c2 : Desc C) {struct c1}:
+  {c1 = c2} + {c1 <> c2}.
+Proof.  
+  destruct c1; destruct c2;
+    try solve [right; discriminate].
+  - left; auto.
+  - remember H as D. clear HeqD. destruct H. destruct (dec_eq c c0).
+    + symmetry in e. subst.
+      generalize dependent ds0.
+      induction ds; intros ds'; destruct ds';
+        try solve [right; discriminate].
+      * left; auto.
+      * destruct (Desc_eq C D a d).
+        -- subst.
+           destruct (IHds ds').
+           ++ inversion e; subst; clear e;
+              left; auto.
+           ++ right; intros Contra;
+                inversion Contra; subst; auto.
+        -- right; intros Contra;
+             inversion Contra; subst; auto.
+    + right; intros Contra; inversion Contra; subst; auto.
+  - destruct (Desc_eq C H c1 c2);
+      try solve [left; subst; auto];
+      try solve [right; intros Contra; inversion Contra; subst; auto].
+  - destruct (Desc_eq C H c1 c2);
+      try solve [left; subst; auto];
+      try solve [right; intros Contra; inversion Contra; subst; auto].
+Defined.
 
 Definition Dec_Eq_Desc (C : Type) (_ : Dec_Eq C) (x y: Desc C) :=
 	(fun x y : Desc C =>
