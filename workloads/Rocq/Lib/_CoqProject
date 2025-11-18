@@ -1,6 +1,7 @@
 -Q . PropLang
 PropLang.v
 seedpool/SeedPool.v
+loops/CoverageLoop.v
 loops/FuzzLoop.v
 loops/PerfFuzzLoop.v
 loops/TargetLoop.v
