@@ -12,13 +12,13 @@
   "build_steps": [
     {
       "Command": {
-        "command": "build",
+        "command": "./build",
         "run_at": "${workload_path}"
       }
     },
     {
       "Command": {
-        "command": "build_generator",
+        "command": "./build_generator",
         "run_at": "${workload_path}",
         "args": [
           "!{generator}"
@@ -29,7 +29,7 @@
   "test_steps": [
     {
       "Command": {
-        "command": "${strategy}_sampler.native",
+        "command": "./${strategy}_sampler.native",
         "run_at": "${workload_path}",
         "args": [
           "${property}",
