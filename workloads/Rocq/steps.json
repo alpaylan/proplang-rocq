@@ -19,76 +19,19 @@
       "Command": {
         "command": "${workload_path}/build_generator",
         "args": [
-          "!generator"
-        ]
-      }
-    },
-    {
-      "Command": {
-        "command": "${workload_path}/build_fuzzer",
-        "args": [
-          "!fuzzer"
-        ],
-        "params": [
-          "workload_path",
-          "fuzzer"
+          "!{generator}"
         ]
       }
     }
   ],
   "test_steps": [
     {
-      "Match": {
-        "value": "strategy",
-        "options": {
-          "fuzzer": {
-            "Command": {
-              "command": "$workload_path/main_exec",
-              "args": [
-                "\"$strategy_exec $property\""
-              ],
-              "params": [
-                "workload_path",
-                "property",
-                "strategy"
-              ]
-            }
-          },
-          "generator": {
-            "Match": {
-              "value": "cross",
-              "options": {
-                "false": {
-                  "Command": {
-                    "command": "$workload_path/$strategy_test_runner.native",
-                    "args": [
-                      "$property"
-                    ],
-                    "params": [
-                      "workload_path",
-                      "property",
-                      "strategy"
-                    ]
-                  }
-                },
-                "true": {
-                  "Command": {
-                    "command": "$workload_path/$strategy_sampler.native",
-                    "args": [
-                      "$property",
-                      "$tests"
-                    ],
-                    "params": [
-                      "workload_path",
-                      "property",
-                      "strategy"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        }
+      "Command": {
+        "command": "${workload_path}/${strategy}_sampler.native",
+        "args": [
+          "${property}",
+          "${tests}"
+        ]
       }
     }
   ],
