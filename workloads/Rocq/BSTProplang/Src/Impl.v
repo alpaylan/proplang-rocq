@@ -20,13 +20,13 @@ Fixpoint insert (k : nat) (v: nat) (t : Tree) :=
   | Leaf => Node Leaf k v Leaf
   | Node l k' v' r =>
   (*! *)
-    (*!
     if k <? k' then Node (insert k v l) k' v' r
     else if k' <? k then Node l k' v' (insert k v r)
     else Node l k' v r
-    *)
   (*!! insert_1 *)
+  (*!
     Node Leaf k v Leaf
+  *)
   (*!! insert_2 *)
   (*!
     if k <? k' then Node (insert k v l) k' v' r
