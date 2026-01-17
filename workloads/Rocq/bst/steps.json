@@ -12,7 +12,10 @@
   "build_steps": [
     {
       "Command": {
-        "command": "${workload_path}/build"
+        "command": "${workload_path}/build",
+        "args": [
+          "-c"
+        ]
       }
     },
     {
