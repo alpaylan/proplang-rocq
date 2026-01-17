@@ -12,33 +12,114 @@
   "build_steps": [
     {
       "Command": {
-        "command": "${workload_path}/build"
+        "command": "$workload_path/build"
       }
     },
     {
       "Command": {
-        "command": "${workload_path}/build_generator",
+        "command": "$workload_path/build_generator",
         "args": [
-          "!{generator}"
+          "!generator"
+        ],
+        "params": [
+          "workload_path",
+          "generator"
+        ]
+      }
+    },
+    {
+      "Command": {
+        "command": "$workload_path/build_fuzzer",
+        "args": [
+          "!fuzzer"
+        ],
+        "params": [
+          "workload_path",
+          "fuzzer"
         ]
       }
     }
   ],
   "test_steps": [
     {
-      "Command": {
-        "command": "${workload_path}/${strategy}_test_runner.native",
-        "args": [
-          "${property}",
-          "${tests}"
-        ]
+      "Match": {
+        "value": "strategy",
+        "options": {
+          "fuzzer": {
+            "Command": {
+              "command": "$workload_path/main_exec",
+              "args": [
+                "\"$strategy_exec $property\""
+              ],
+              "params": [
+                "workload_path",
+                "property",
+                "strategy"
+              ]
+            }
+          },
+          "generator": {
+            "Match": {
+              "value": "cross",
+              "options": {
+                "false": {
+                  "Command": {
+                    "command": "$workload_path/$strategy_test_runner.native",
+                    "args": [
+                      "$property"
+                    ],
+                    "params": [
+                      "workload_path",
+                      "property",
+                      "strategy"
+                    ]
+                  }
+                },
+                "true": {
+                  "Command": {
+                    "command": "$workload_path/$strategy_sampler.native",
+                    "args": [
+                      "$property",
+                      "$tests"
+                    ],
+                    "params": [
+                      "workload_path",
+                      "property",
+                      "strategy"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   ],
   "tags": {
+    "BespokeGenerator": [
+      "generator",
+      "sampler"
+    ],
+    "SpecificationBasedGenerator": [
+      "generator"
+    ],
+    "TypeBasedGenerator": [
+      "generator"
+    ],
+    "TypeBasedFuzzer": [
+      "fuzzer"
+    ],
     "generator": [
       "BespokeGenerator",
-      "CoverageGenerator"
+      "SpecificationBasedGenerator",
+      "TypeBasedGenerator"
+    ],
+    "fuzzer": [
+      "TypeBasedFuzzer"
+    ],
+    "sampler": [
+      "BespokeGenerator"
     ]
   }
 }

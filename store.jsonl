@@ -1,0 +1,1 @@
+{"data":{"cross":false,"experiment":"proplang-rocq","language":"Rocq","mutations":["insert_1"],"property":"InsertPost","status":"timed_out","strategy":"BespokeGenerator","tests":"200000","timeout":30.0,"timestamp":"2026-01-17T10:48:21.842305+00:00","trial":0,"workload":"BSTProplang"},"hash":"51919983c75ee1c08e5eab25cc30480d4601941d"}
