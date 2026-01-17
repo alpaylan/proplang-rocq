@@ -19,72 +19,26 @@
       "Command": {
         "command": "${workload_path}/build_generator",
         "args": [
-          "!generator"
-        ]
-      }
-    },
-    {
-      "Command": {
-        "command": "${workload_path}/build_fuzzer",
-        "args": [
-          "!fuzzer"
+          "!{generator}"
         ]
       }
     }
   ],
   "test_steps": [
     {
-      "Match": {
-        "value": "strategy",
-        "options": {
-          "fuzzer": {
-            "Command": {
-              "command": "${workload_path}/main_exec",
-              "args": [
-                "\"${strategy}_exec ${property}\""
-              ]
-            }
-          },
-          "generator": {
-            "Match": {
-              "value": "cross",
-              "options": {
-                "false": {
-                  "Command": {
-                    "command": "${workload_path}/${strategy}_test_runner.native",
-                    "args": [
-                      "${property}"
-                    ]
-                  }
-                },
-                "true": {
-                  "Command": {
-                    "command": "${workload_path}/${strategy}_sampler.native",
-                    "args": [
-                      "${property}",
-                      "${tests}"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        }
+      "Command": {
+        "command": "${workload_path}/${strategy}_sampler.native",
+        "args": [
+          "${property}",
+          "${tests}"
+        ]
       }
     }
   ],
   "tags": {
     "generator": [
       "BespokeGenerator",
-      "SpecificationBasedGenerator",
-      "TypeBasedGenerator",
       "CoverageGenerator"
-    ],
-    "fuzzer": [
-      "TypeBasedFuzzer"
-    ],
-    "sampler": [
-      "BespokeGenerator"
     ]
   }
 }
