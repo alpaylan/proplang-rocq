@@ -38,14 +38,14 @@ Definition gen_bst (s : nat) (lo hi : nat) : G Tree :=
 
 Fixpoint gen_bst (s : nat) (lo hi : nat) : G Tree :=
   match s with
-  | O => ret E
-  | S s' => freq [(1, ret E)
+  | O => ret Leaf
+  | S s' => freq [(1, ret Leaf)
                  ;(if hi - lo < 2? then 0 else s,
                     k <- choose (lo+1, hi-1);;
                     v <- arbitrary;;
                     l <- gen_bst s' lo k;;
                     r <- gen_bst s' k hi;;
-                    ret (T l k v r))]
+                    ret (Node l k v r))]
   end.
 
 
