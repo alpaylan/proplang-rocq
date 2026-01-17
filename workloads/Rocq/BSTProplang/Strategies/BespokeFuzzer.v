@@ -7,19 +7,22 @@ Import ListNotations.
 Import MonadNotation.
 
 From PropLang Require Import PropLang.
+From PropLang Require Import SeedPool.
+From PropLang.seedpool Require Import Heap.
+From PropLang.loops Require Import FuzzLoop.
 From BSTProplang Require Import Spec.
 From BSTProplang Require Import Impl.
 
 Local Open Scope nat.
 Local Open Scope prop_scope.
 
-Definition insert_correct (k : nat) (v: nat) (t : Tree) :=
+Fixpoint insert_correct (k : nat) (v: nat) (t : Tree) :=
   match t with
-  | E => T E k v E
-  | T l k' v' r =>       
-    if k <? k' then T (insert k v l) k' v' r 
-    else if k' <? k then T l k' v' (insert k v r) 
-    else T l k' v r
+  | Leaf => Node Leaf k v Leaf
+  | Node l k' v' r =>
+    if k <? k' then Node (insert_correct k v l) k' v' r
+    else if k' <? k then Node l k' v' (insert_correct k v r)
+    else Node l k' v r
   end.
 
 Fixpoint gen_kvs (s : nat) (lo hi: nat) : G (list (nat * nat)) :=
@@ -37,26 +40,26 @@ Fixpoint gen_kvs (s : nat) (lo hi: nat) : G (list (nat * nat)) :=
 Definition gen_bst (s : nat) (lo hi: nat) : G Tree :=
 	bindGen (choose(0, s)%nat) (fun sz =>
 	bindGen (gen_kvs sz lo hi) (fun kvs =>
-	ret (fold_right (fun '(k, v) t => insert_correct k v t) E kvs))).
+	ret (fold_right (fun '(k, v) t => insert_correct k v t) Leaf kvs))).
 
 	
 Fixpoint mutate_bst_ (t : Tree) (lo hi: nat) : G Tree :=
   match t with
-  | E => freq [(4, ret E)
+  | Leaf => freq [(4, ret Leaf)
               ;(1, gen_bst 1 lo hi)]
-  | T l k v r => freq [	
-	(4, l' <- mutate_bst_ l lo (k - 1);; ret (T l' k v r));
-	(4, r' <- mutate_bst_ r (k + 1) hi;; ret (T l k v r'));
-    (2, 
+  | Node l k v r => freq [
+	(4, l' <- mutate_bst_ l lo (k - 1);; ret (Node l' k v r));
+	(4, r' <- mutate_bst_ r (k + 1) hi;; ret (Node l k v r'));
+    (2,
 		let s := size l in
 		l' <- gen_bst s lo (k - 1);;
-		ret (T l' k v r));
-	(2, 
+		ret (Node l' k v r));
+	(2,
 		let s := size r in
 		r' <- gen_bst s (k + 1) hi;;
-		ret (T l k v r'));
+		ret (Node l k v r'));
 	(1, v' <- arbitrary;;
-		ret (T l k v' r))
+		ret (Node l k v' r))
 		]
   end.
 

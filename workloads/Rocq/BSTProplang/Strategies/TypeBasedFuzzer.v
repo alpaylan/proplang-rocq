@@ -9,6 +9,10 @@ Import MonadNotation.
 From BSTProplang Require Import Impl.
 From BSTProplang Require Import Spec.
 From PropLang Require Import PropLang.
+From PropLang Require Import SeedPool.
+From PropLang.seedpool Require Import Heap.
+From PropLang.seedpool Require Import Queue.
+From PropLang.loops Require Import FuzzLoop.
 
 Local Open Scope nat.
 Local Open Scope prop_scope.

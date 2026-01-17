@@ -5,8 +5,8 @@ From QuickChick Require Import QuickChick.
 Import QcNotation.
 
 Inductive Tree :=
-| E 
-| T : Tree -> nat -> nat -> Tree -> Tree.
+| Leaf
+| Node : Tree -> nat -> nat -> Tree -> Tree.
 
 Derive (Show) for Tree.
 
@@ -17,47 +17,47 @@ Axiom fuel : nat. Extract Constant fuel => "100000".
 
 Fixpoint insert (k : nat) (v: nat) (t : Tree) :=
   match t with
-  | E => T E k v E
-  | T l k' v' r => 
+  | Leaf => Node Leaf k v Leaf
+  | Node l k' v' r =>
   (*! *)
     (*!
-    if k <? k' then T (insert k v l) k' v' r 
-    else if k' <? k then T l k' v' (insert k v r) 
-    else T l k' v r
+    if k <? k' then Node (insert k v l) k' v' r
+    else if k' <? k then Node l k' v' (insert k v r)
+    else Node l k' v r
     *)
   (*!! insert_1 *)
-    T E k v E
+    Node Leaf k v Leaf
   (*!! insert_2 *)
   (*!
-    if k <? k' then T (insert k v l) k' v' r
-    else T l k' v r
+    if k <? k' then Node (insert k v l) k' v' r
+    else Node l k' v r
   *)
   (*!! insert_3 *)
   (*!
-    if k <? k' then T (insert k v l) k' v' r
-    else if k' <? k then T l k' v' (insert k v r)
-    else T l k' v' r
+    if k <? k' then Node (insert k v l) k' v' r
+    else if k' <? k then Node l k' v' (insert k v r)
+    else Node l k' v' r
   *)
   (* !*)
   end.
 
 Fixpoint join (l: Tree) (r: Tree) :=
   match l, r with
-  | E, _ => r
-  | _, E => l
-  | T l k v r, T l' k' v' r' =>
-    T l k v (T (join r l') k' v' r')
+  | Leaf, _ => r
+  | _, Leaf => l
+  | Node l k v r, Node l' k' v' r' =>
+    Node l k v (Node (join r l') k' v' r')
   end
 .
   
 
 Fixpoint delete (k: nat) (t: Tree) :=
   match t with
-  | E => E
-  | T l k' v' r =>
+  | Leaf => Leaf
+  | Node l k' v' r =>
   (*! *)
-  if k <? k' then T (delete k l) k' v' r
-  else if k' <? k then T l k' v' (delete k r)
+  if k <? k' then Node (delete k l) k' v' r
+  else if k' <? k then Node l k' v' (delete k r)
   else join l r
   (*!! delete_4 *)
   (*!
@@ -67,8 +67,8 @@ Fixpoint delete (k: nat) (t: Tree) :=
   *)
   (*!! delete_5 *)
   (*!
-  if k' <? k then T (delete k l) k' v' r
-  else if k <? k' then T l k' v' (delete k r)
+  if k' <? k then Node (delete k l) k' v' r
+  else if k <? k' then Node l k' v' (delete k r)
   else join l r
   *)
   (* !*)
@@ -78,18 +78,18 @@ Fixpoint delete (k: nat) (t: Tree) :=
 
 Fixpoint below (k: nat) (t: Tree) :=
   match k, t with
-  | _, E => E
-  | k, T l k' v r =>
+  | _, Leaf => Leaf
+  | k, Node l k' v r =>
     if k <=? k' then below k l
-    else T l k' v (below k r)
+    else Node l k' v (below k r)
   end.
 
 Fixpoint above (k: nat) (t: Tree) :=
   match k, t with
-  | _, E => E
-  | k, (T l k' v r) =>
+  | _, Leaf => Leaf
+  | k, (Node l k' v r) =>
     if k' <=? k then above k r
-    else T (above k l) k' v r
+    else Node (above k l) k' v r
   end.
 
 
@@ -97,33 +97,33 @@ Fixpoint above (k: nat) (t: Tree) :=
 
 Fixpoint union_ (l: Tree) (r: Tree) (f: nat) :=
   match f with
-  | 0 => E
+  | 0 => Leaf
   | S f' =>
     match l, r with
-    | E, _ => r
-    | _, E => l
+    | Leaf, _ => r
+    | _, Leaf => l
     (*! *)
-    | (T l k v r), t =>
-      T (union_ l (below k t) f') k v (union_ r (above k t) f')
+    | (Node l k v r), t =>
+      Node (union_ l (below k t) f') k v (union_ r (above k t) f')
     (*!! union_6 *)
     (*!
-    | (T l k v r), (T l' k' v' r') =>
-      T l k v (T (union_ r l' f') k' v' r')
+    | (Node l k v r), (Node l' k' v' r') =>
+      Node l k v (Node (union_ r l' f') k' v' r')
     *)
     (*!! union_7 *)
     (*!
-    | (T l k v r), (T l' k' v' r') =>
-      if k =? k' then T (union_ l l' f') k v (union_ r r' f')
-      else if k <? k' then T l k v (T (union_ r l' f') k' v' r')
-      else union_ (T l' k' v' r') (T l k v r) f'
+    | (Node l k v r), (Node l' k' v' r') =>
+      if k =? k' then Node (union_ l l' f') k v (union_ r r' f')
+      else if k <? k' then Node l k v (Node (union_ r l' f') k' v' r')
+      else union_ (Node l' k' v' r') (Node l k v r) f'
     *)
     (*!! union_8 *)
     (*!
-    | (T l k v r), (T l' k' v' r') =>
-    if k =? k'  then T (union_ l l' f') k v (union_ r r' f')
-    else if k <? k'   then T (union_ l (below k l') f') k v
-                            (union_ r (T (above k l') k' v' r') f')
-      else union_ (T l' k' v' r') (T l k v r) f' 
+    | (Node l k v r), (Node l' k' v' r') =>
+    if k =? k'  then Node (union_ l l' f') k v (union_ r r' f')
+    else if k <? k'   then Node (union_ l (below k l') f') k v
+                            (union_ r (Node (above k l') k' v' r') f')
+      else union_ (Node l' k' v' r') (Node l k v r) f'
     *)
     (* !*)
     end
@@ -136,8 +136,8 @@ Definition union (l: Tree) (r: Tree) :=
 
 Fixpoint find (k: nat) (t: Tree): option nat :=
   match k, t with
-  | _, E => None
-  | k, (T l k' v' r) =>
+  | _, Leaf => None
+  | k, (Node l k' v' r) =>
     if k <? k' then find k l
     else if k' <? k then find k r
     else Some v'
@@ -147,8 +147,8 @@ Fixpoint find (k: nat) (t: Tree): option nat :=
 
 Fixpoint size (t: Tree) :=
   match t with
-  | E => 0
-  | T l k v r => 1 + size l + size r
+  | Leaf => 0
+  | Node l k v r => 1 + size l + size r
   end
 .
 

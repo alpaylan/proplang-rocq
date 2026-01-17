@@ -1,4 +1,5 @@
-
+Require Import Lia ZArith.
+From PropLang Require Import SeedPool.
 
 Module LeftistHeap.
 
@@ -41,8 +42,8 @@ Module LeftistHeap.
     | isHeap_E : isHeap E
     | isHeap_N :
         forall  (n: nat) (v: Seed) (l r : Heap),
-          (forall x : @Seed A F, Elem x l -> seed_in_z v >= seed_in_z x) -> isHeap l ->
-          (forall x : @Seed A F, Elem x r -> seed_in_z v >= seed_in_z x) -> isHeap r ->
+          (forall x : @Seed A F, Elem x l -> (seed_in_z v >= seed_in_z x)%Z) -> isHeap l ->
+          (forall x : @Seed A F, Elem x r -> (seed_in_z v >= seed_in_z x)%Z) -> isHeap r ->
             isHeap (N n v l r).
 
   #[global] Hint Constructors LTree LeftBiased Elem isHeap : core.
@@ -113,15 +114,15 @@ End LeftistHeap.
 
 #[global] Instance HeapSeedPool {A F: Type} `{Scalar F} : @SeedPool A F (@LeftistHeap.Heap A F) :=
 {| mkPool _ := LeftistHeap.empty tt;
-  invest seed pool := match seed with 
-                      | (a, f) => LeftistHeap.insert (mkSeed a f 100) pool
+  invest seed pool := match seed with
+                      | (a, f) => LeftistHeap.insert (mkSeed a f 100%Z) pool
                       end ;
   revise pool :=  match LeftistHeap.extractMax pool with
                   | None => pool
-                  | Some (seed, rest) => 
+                  | Some (seed, rest) =>
                     let '{| input := a; feedback := f; energy := n|} := seed in
-                    if (n =? 0) then rest
-                    else LeftistHeap.insert (mkSeed a f (n - 1)) rest
+                    if (n =? 0)%Z then rest
+                    else LeftistHeap.insert (mkSeed a f (n - 1)%Z) rest
                   end ;
   sample pool := match LeftistHeap.extractMax pool with
                  | None => Generate

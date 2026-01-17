@@ -1,4 +1,6 @@
-
+Require Import List ZArith.
+Import ListNotations.
+From PropLang Require Import SeedPool.
 
 Module Queue.
   Local Open Scope list_scope.
@@ -75,19 +77,19 @@ Import FIFOQueue.
 
 #[global] Instance FIFOSeedPool {A F: Type}  `{Scalar F} : @SeedPool A F (FIFOQueue.t (@Seed A F)) :=
 {| mkPool _ := FIFOQueue.mkFIFOQueue tt;
-  invest seed pool := match seed with 
-                      | (a, f) => FIFOQueue.push (mkSeed a f 100) pool
+  invest seed pool := match seed with
+                      | (a, f) => FIFOQueue.push (mkSeed a f 100%Z) pool
                       end ;
   revise pool :=  match FIFOQueue.pop pool with
                   | None => pool
-                  | Some (h, t) => 
+                  | Some (h, t) =>
                       let '{| input := a; feedback := f; energy := n|} := h in
-                      if (n =? 0) then t
-                      else FIFOQueue.push (mkSeed a f (n - 1)) t
+                      if (n =? 0)%Z then t
+                      else FIFOQueue.push (mkSeed a f (n - 1)%Z) t
                   end ;
   sample pool := match FIFOQueue.pop pool with
                  | None => Generate
-                 | Some(h, _) => if (energy h =? 0) 
+                 | Some(h, _) => if (energy h =? 0)%Z
                               then Generate
                               else Mutate h
                  end ;
@@ -96,7 +98,7 @@ Import FIFOQueue.
                 | [] => cmax
                 | h :: t => match cmax with
                             | None => maxSeed (Some h) t
-                            | Some seed => if ((scale (feedback h)) >? (scale (feedback seed))) then maxSeed (Some h) t else maxSeed (Some seed) t
+                            | Some seed => if ((scale (feedback h)) >? (scale (feedback seed)))%Z then maxSeed (Some h) t else maxSeed (Some seed) t
                             end
                 end in
                 maxSeed None pool
@@ -108,19 +110,19 @@ Import FILOQueue.
 
 #[global] Instance FILOSeedPool {A F: Type}  `{Scalar F} : @SeedPool A F (FILOQueue.t (@Seed A F)) :=
 {| mkPool _ := FILOQueue.mkFILOQueue tt;
-  invest seed pool := match seed with 
-                      | (a, f) => FILOQueue.push (mkSeed a f 1) pool
+  invest seed pool := match seed with
+                      | (a, f) => FILOQueue.push (mkSeed a f 1%Z) pool
                       end ;
   revise pool :=  match FILOQueue.pop pool with
                   | None => pool
-                  | Some (h, t) => 
+                  | Some (h, t) =>
                       let '{| input := a; feedback := f; energy := n|} := h in
-                      if (n =? 0) then t
-                      else FILOQueue.push (mkSeed a f (n - 1)) t
+                      if (n =? 0)%Z then t
+                      else FILOQueue.push (mkSeed a f (n - 1)%Z) t
                   end ;
   sample pool := match FILOQueue.pop pool with
                  | None => Generate
-                 | Some(h, _) => if (energy h =? 0) 
+                 | Some(h, _) => if (energy h =? 0)%Z
                               then Generate
                               else Mutate h
                  end ;
@@ -129,7 +131,7 @@ Import FILOQueue.
                 | [] => cmax
                 | h :: t => match cmax with
                             | None => maxSeed (Some h) t
-                            | Some seed => if ((scale (feedback h)) >? (scale (feedback seed))) then maxSeed (Some h) t else maxSeed (Some seed) t
+                            | Some seed => if ((scale (feedback h)) >? (scale (feedback seed)))%Z then maxSeed (Some h) t else maxSeed (Some seed) t
                             end
                 end in
                 maxSeed None pool

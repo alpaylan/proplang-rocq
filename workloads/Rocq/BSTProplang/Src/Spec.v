@@ -5,8 +5,8 @@ From BSTProplang Require Import Impl.
 
 Fixpoint keys (t: Tree): list nat :=
   match t with
-  | E => nil
-  | T l k v r =>
+  | Leaf => nil
+  | Node l k v r =>
     let lk := keys l in
     let rk := keys r in
     [k] ++ lk ++ rk
@@ -29,8 +29,8 @@ Definition Nat_gtb (n1 n2: nat) : bool :=
 
 Fixpoint isBST (t: Tree): bool:=
   match t with
-  | E => true
-  | (T l k _ r) =>
+  | Leaf => true
+  | (Node l k _ r) =>
     isBST l
       && isBST r
       && all (Nat_gtb k) (keys l)
@@ -42,8 +42,8 @@ Fixpoint isBST (t: Tree): bool:=
 
 Fixpoint toList (t: Tree): list (nat * nat) :=
   match t with
-  | E => nil
-  | T l k v r =>
+  | Leaf => nil
+  | Node l k v r =>
     toList l ++ [(k, v)] ++ toList r
   end.
 
@@ -159,8 +159,8 @@ Definition prop_UnionModel (t: Tree) (t': Tree) :=
 
 Fixpoint tree_eqb (t: Tree) (t': Tree) : bool :=
   match t, t' with
-  | E, E => true
-  | T l k v r, T l' k' v' r' =>
+  | Leaf, Leaf => true
+  | Node l k v r, Node l' k' v' r' =>
     (k =? k') && (v =? v') && tree_eqb l l' && tree_eqb r r'
   | _, _ => false
   end.

@@ -25,11 +25,11 @@ Derive ArbitrarySizedSuchThat for (fun x => between lo x hi).
 Derive DecOpt for (between lo x hi).
 
 Inductive bst : nat -> nat -> Tree -> Prop :=
-| bst_leaf : forall lo hi, bst lo hi E
+| bst_leaf : forall lo hi, bst lo hi Leaf
 | bst_node : forall lo hi k v l r,
     between lo k hi ->
     bst lo k l -> bst k hi r ->
-    bst lo hi (T l k v r).
+    bst lo hi (Node l k v r).
 
 Derive ArbitrarySizedSuchThat for (fun t => bst lo hi t).
 Derive DecOpt for (bst lo hi t).

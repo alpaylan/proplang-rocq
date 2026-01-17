@@ -12,13 +12,13 @@ From PropLang Require Import PropLang.
 
 Local Open Scope prop_scope.
 
-Definition insert_correct (k : nat) (v: nat) (t : Tree) :=
+Fixpoint insert_correct (k : nat) (v: nat) (t : Tree) :=
   match t with
-  | E => T E k v E
-  | T l k' v' r =>       
-    if k <? k' then T (insert k v l) k' v' r 
-    else if k' <? k then T l k' v' (insert k v r) 
-    else T l k' v r
+  | Leaf => Node Leaf k v Leaf
+  | Node l k' v' r =>
+    if k <? k' then Node (insert_correct k v l) k' v' r
+    else if k' <? k then Node l k' v' (insert_correct k v r)
+    else Node l k' v r
   end.
 
 
@@ -33,14 +33,14 @@ Definition gen_bst (s : nat) (lo hi : nat) : G Tree :=
 			gen_bst s' lo hi t'
 		end
 	in
-	gen_bst s lo hi E.
+	gen_bst s lo hi Leaf.
 
 
 #[local] Instance shrinkTree : Shrink Tree :=
 {|
   shrink t := match t with
-              | E => []
-              | T l k v r => [l; r]
+              | Leaf => []
+              | Node l k v r => [l; r]
               end
 |}.
 Definition bespoke s := gen_bst s 0 100.
@@ -89,14 +89,14 @@ Definition timedRunLoop (max_time : nat)  (cprop : CProp ∅): G TimedResult :=
 	else
 		match fuel with
 		| O => ret (mkTimedResult (mkResult discards false passed []) (timePassed start_time current_time))
-		| S fuel' => 
-			res <- genAndRun cprop (log2 (passed + discards)%nat);;
+		| S fuel' =>
+			res <- generate_and_run cprop (Nat.log2 (passed + discards)%nat);;
 			match res with
 			| Normal seed false =>
 				(* Fails *)
-				let shrinkingResult := shrinkLoop 10 cprop seed in
-				let printingResult := print cprop 0%nat shrinkingResult in
-				ret (mkTimedResult (mkResult discards true (passed + 1) printingResult) (timePassed start_time current_time))
+				let shrunk := shrinker cprop seed in
+				let printed := printer cprop shrunk in
+				ret (mkTimedResult (mkResult discards true (passed + 1) printed) (timePassed start_time current_time))
 			| Normal _ true =>
 				(* Passes *)
 				runLoop' fuel' cprop (passed + 1)%nat discards
