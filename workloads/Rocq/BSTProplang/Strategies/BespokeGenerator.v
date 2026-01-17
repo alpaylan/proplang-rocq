@@ -43,7 +43,7 @@ Definition gen_bst (s : nat) (lo hi : nat) : G Tree :=
               | Node l k v r => [l; r]
               end
 |}.
-Definition bespoke _ := gen_bst 5 0 40.
+Definition bespoke s := gen_bst s 0 40.
 
 Derive (Show) for Tree.
 
