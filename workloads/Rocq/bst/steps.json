@@ -19,7 +19,7 @@
       "Command": {
         "command": "${workload_path}/build_generator",
         "args": [
-          "!generator"
+          "!{generator}"
         ]
       }
     },
@@ -27,7 +27,7 @@
       "Command": {
         "command": "${workload_path}/build_fuzzer",
         "args": [
-          "!fuzzer"
+          "!{fuzzer}"
         ]
       }
     }
