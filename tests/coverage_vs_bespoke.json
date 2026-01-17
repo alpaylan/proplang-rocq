@@ -1,8 +1,10 @@
 [
     {
         "language": "Rocq",
-        "workload": "BST",
-        "mutations": ["insert_1"],
+        "workload": "BSTProplang",
+        "mutations": [
+            "insert_1"
+        ],
         "trials": 5,
         "timeout": 30,
         "tasks": [
