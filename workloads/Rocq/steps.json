@@ -27,7 +27,7 @@
   "test_steps": [
     {
       "Command": {
-        "command": "${workload_path}/${strategy}_sampler.native",
+        "command": "${workload_path}/${strategy}_test_runner.native",
         "args": [
           "${property}",
           "${tests}"
