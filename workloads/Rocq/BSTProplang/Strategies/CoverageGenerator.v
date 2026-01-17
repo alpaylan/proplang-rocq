@@ -190,11 +190,8 @@ Definition prop_InsertValid :=
 Definition term_InsertValid (input : ⟦⦗prop_InsertValid⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-(* Naive test *)
-Definition test_prop_InsertValid := runLoop number_of_trials prop_InsertValid.
-
 (* Coverage-guided test *)
-Definition test_prop_InsertValid_coverage :=
+Definition test_prop_InsertValid :=
   coverage_loop_guided number_of_trials prop_InsertValid coverage_strength coverage_fanout term_InsertValid.
 
 (* ---------- InsertPost property ---------- *)
@@ -211,9 +208,7 @@ Definition prop_InsertPost :=
 Definition term_InsertPost (input : ⟦⦗prop_InsertPost⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_InsertPost := runLoop number_of_trials prop_InsertPost.
-
-Definition test_prop_InsertPost_coverage :=
+Definition test_prop_InsertPost :=
   coverage_loop_guided number_of_trials prop_InsertPost coverage_strength coverage_fanout term_InsertPost.
 
 (* ---------- InsertModel property ---------- *)
@@ -229,10 +224,7 @@ Definition prop_InsertModel :=
 Definition term_InsertModel (input : ⟦⦗prop_InsertModel⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_InsertModel := runLoop number_of_trials prop_InsertModel.
-
-Definition test_prop_InsertModel_coverage :=
-  coverage_loop_guided number_of_trials prop_InsertModel coverage_strength coverage_fanout term_InsertModel.
+Definition test_prop_InsertModel := coverage_loop_guided number_of_trials prop_InsertModel coverage_strength coverage_fanout term_InsertModel.
 
 (* ---------- DeleteInsert property ---------- *)
 
@@ -248,10 +240,7 @@ Definition prop_DeleteInsert :=
 Definition term_DeleteInsert (input : ⟦⦗prop_DeleteInsert⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_DeleteInsert := runLoop number_of_trials prop_DeleteInsert.
-
-Definition test_prop_DeleteInsert_coverage :=
-  coverage_loop_guided number_of_trials prop_DeleteInsert coverage_strength coverage_fanout term_DeleteInsert.
+Definition test_prop_DeleteInsert := coverage_loop_guided number_of_trials prop_DeleteInsert coverage_strength coverage_fanout term_DeleteInsert.
 
 (* ---------- InsertInsert property ---------- *)
 
@@ -268,10 +257,7 @@ Definition prop_InsertInsert :=
 Definition term_InsertInsert (input : ⟦⦗prop_InsertInsert⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_InsertInsert := runLoop number_of_trials prop_InsertInsert.
-
-Definition test_prop_InsertInsert_coverage :=
-  coverage_loop_guided number_of_trials prop_InsertInsert coverage_strength coverage_fanout term_InsertInsert.
+Definition test_prop_InsertInsert := coverage_loop_guided number_of_trials prop_InsertInsert coverage_strength coverage_fanout term_InsertInsert.
 
 (* ---------- InsertUnion property ---------- *)
 
@@ -291,10 +277,7 @@ Definition term_InsertUnion (input : ⟦⦗prop_InsertUnion⦘⟧) : Term Tree :
     CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
   end.
 
-Definition test_prop_InsertUnion := runLoop number_of_trials prop_InsertUnion.
-
-Definition test_prop_InsertUnion_coverage :=
-  coverage_loop_guided number_of_trials prop_InsertUnion coverage_strength coverage_fanout term_InsertUnion.
+Definition test_prop_InsertUnion := coverage_loop_guided number_of_trials prop_InsertUnion coverage_strength coverage_fanout term_InsertUnion.
 
 (* ---------- UnionDeleteInsert property ---------- *)
 
@@ -313,7 +296,4 @@ Definition term_UnionDeleteInsert (input : ⟦⦗prop_UnionDeleteInsert⦘⟧) :
     CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
   end.
 
-Definition test_prop_UnionDeleteInsert := runLoop number_of_trials prop_UnionDeleteInsert.
-
-Definition test_prop_UnionDeleteInsert_coverage :=
-  coverage_loop_guided number_of_trials prop_UnionDeleteInsert coverage_strength coverage_fanout term_UnionDeleteInsert.
+Definition test_prop_UnionDeleteInsert := coverage_loop_guided number_of_trials prop_UnionDeleteInsert coverage_strength coverage_fanout term_UnionDeleteInsert.
