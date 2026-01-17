@@ -12,24 +12,20 @@
   "build_steps": [
     {
       "Command": {
-        "command": "$workload_path/build"
+        "command": "${workload_path}/build"
       }
     },
     {
       "Command": {
-        "command": "$workload_path/build_generator",
+        "command": "${workload_path}/build_generator",
         "args": [
           "!generator"
-        ],
-        "params": [
-          "workload_path",
-          "generator"
         ]
       }
     },
     {
       "Command": {
-        "command": "$workload_path/build_fuzzer",
+        "command": "${workload_path}/build_fuzzer",
         "args": [
           "!fuzzer"
         ],
