@@ -97,29 +97,9 @@
     }
   ],
   "tags": {
-    "BespokeGenerator": [
-      "generator",
-      "sampler"
-    ],
-    "SpecificationBasedGenerator": [
-      "generator"
-    ],
-    "TypeBasedGenerator": [
-      "generator"
-    ],
-    "TypeBasedFuzzer": [
-      "fuzzer"
-    ],
     "generator": [
       "BespokeGenerator",
-      "SpecificationBasedGenerator",
-      "TypeBasedGenerator"
-    ],
-    "fuzzer": [
-      "TypeBasedFuzzer"
-    ],
-    "sampler": [
-      "BespokeGenerator"
+      "CoverageGenerator"
     ]
   }
 }
