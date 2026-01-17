@@ -10,33 +10,27 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "InsertPost",
-                "tests": "200000"
+                "property": "InsertPost"
             },
             {
                 "strategy": "CoverageGenerator",
-                "property": "InsertPost",
-                "tests": "200000"
+                "property": "InsertPost"
             },
             {
                 "strategy": "BespokeGenerator",
-                "property": "InsertModel",
-                "tests": "200000"
+                "property": "InsertModel"
             },
             {
                 "strategy": "CoverageGenerator",
-                "property": "InsertModel",
-                "tests": "200000"
+                "property": "InsertModel"
             },
             {
                 "strategy": "BespokeGenerator",
-                "property": "InsertInsert",
-                "tests": "200000"
+                "property": "InsertInsert"
             },
             {
                 "strategy": "CoverageGenerator",
-                "property": "InsertInsert",
-                "tests": "200000"
+                "property": "InsertInsert"
             }
         ]
     }
