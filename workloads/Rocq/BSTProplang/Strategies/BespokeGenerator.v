@@ -21,7 +21,7 @@ Fixpoint insert_correct (k : nat) (v: nat) (t : Tree) :=
     else Node l k' v r
   end.
 
-
+(* 
 Definition gen_bst (s : nat) (lo hi : nat) : G Tree :=
 	let fix gen_bst (s : nat) (lo hi : nat) (t: Tree) : G Tree :=
 		match s with
@@ -33,7 +33,20 @@ Definition gen_bst (s : nat) (lo hi : nat) : G Tree :=
 			gen_bst s' lo hi t'
 		end
 	in
-	gen_bst s lo hi Leaf.
+	gen_bst s lo hi Leaf. *)
+
+
+Fixpoint gen_bst (s : nat) (lo hi : nat) : G Tree :=
+  match s with
+  | O => ret E
+  | S s' => freq [(1, ret E)
+                 ;(if hi - lo < 2? then 0 else s,
+                    k <- choose (lo+1, hi-1);;
+                    v <- arbitrary;;
+                    l <- gen_bst s' lo k;;
+                    r <- gen_bst s' k hi;;
+                    ret (T l k v r))]
+  end.
 
 
 #[local] Instance shrinkTree : Shrink Tree :=
