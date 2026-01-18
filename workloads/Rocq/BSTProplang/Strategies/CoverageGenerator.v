@@ -471,7 +471,7 @@ Definition prop_UnionUnionAssoc :=
   @ForAll _ (Tree · (Tree · ∅)) "t3" (fun '(_, (_, s)) => bespoke s) (fun '(_, (_, s)) _ => bespoke s) (fun _ => shrink) (fun _ => show) (
   Implies (Tree · _) (fun '(t3, _) => isBST t3) (
   Check (Tree · (Tree · (Tree · ∅)))
-  (fun '(t3, (t2, (t1, _))) => (union (union t1 t2) t3 =|= union t1 (union t2 t3)))))))))).
+  (fun '(t3, (t2, (t1, _))) => (union (union t1 t2) t3 =|= union t1 (union t2 t3))))))))).
 
 Definition term_UnionUnionAssoc (input : ⟦⦗prop_UnionUnionAssoc⦘⟧) : Term Tree :=
   match input with (t1, (t2, (t3, _))) =>
