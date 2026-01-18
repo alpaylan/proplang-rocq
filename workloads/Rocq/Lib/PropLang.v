@@ -197,7 +197,7 @@ Fixpoint generate_cprop {C : Ctx} (cprop : CProp C)
 Definition generator (cprop : CProp ∅) : G ⟦⟬cprop⟭⟧ :=
   generate_cprop cprop 0.
 
-(* Fixpoint run_cprop {C:Ctx} (cprop : CProp C)
+Fixpoint run_cprop {C:Ctx} (cprop : CProp C)
          (cenv : ⟦C⟧)
          (fenv :  ⟦⦗cprop⦘⟧)
          {struct cprop}
@@ -218,9 +218,9 @@ Proof.
       * exact fenv.
     + exact None.
   - exact (Some (b cenv)).
-Defined. *)
+Defined.
 
-Fixpoint run_cprop {C:Ctx} (cprop : CProp C)
+(* Fixpoint run_cprop {C:Ctx} (cprop : CProp C)
          {struct cprop}
   : ⟦C⟧ -> ⟦⦗cprop⦘⟧ -> option bool :=
   match cprop with
@@ -238,7 +238,7 @@ Fixpoint run_cprop {C:Ctx} (cprop : CProp C)
         end
   | Check _ prop =>
       fun cenv _ => Some (prop cenv)
-  end.
+  end. *)
 
 
 Definition runner (cprop: CProp ∅)
@@ -259,6 +259,7 @@ Definition generate_and_run {C : Ctx}
         end
     | None => ret (Discard input (PreconditionFailure))
     end.
+
 
 Fixpoint run_bypassing_preconditions {C:Ctx} (cprop : CProp C)
          {struct cprop}
@@ -459,6 +460,32 @@ Defined.
 Definition printer (cprop : CProp ∅) (input: ⟦⦗ cprop ⦘⟧)
   : list (string * string) := 
   print_cprop cprop 0 input.
+
+Fixpoint print_argument_list (l: list (string * string)) : string :=
+  let fix aux l :=
+    match l with
+    | [] => ""
+    | ((k, v) :: []) => (k ++ ": " ++ v) 
+    | ((k, v) :: t) => (k ++ ": " ++ v ++ ", " ++ print_argument_list t)
+    end
+  in
+  aux l ++ "\n\n".
+  
+
+Definition logged_generate_and_run
+         (cprop : CProp ∅)
+  : G (RunResult cprop) :=
+    input <- generator cprop;;
+    match lift_opt_cprop cprop input with
+    | Some inps' =>
+        let inps' := trace (print_argument_list (printer cprop inps')) inps' in
+        match run_cprop cprop 0 inps' with
+        | Some truth => ret (Normal inps' truth)
+        | None => ret (Discard input (PreconditionFailure))
+        end
+    | None => ret (Discard input (PreconditionFailure))
+    end.
+
 
 Definition pri_opt {A} (pri: A -> string) (a: option A) : string :=
   match a with

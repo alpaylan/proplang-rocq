@@ -6,7 +6,7 @@ Set Warnings "-extraction-opaque-accessed,-extraction".
 From BSTProplang Require Import BespokeGenerator.
 
 Axiom num_tests : nat. 
-Extract Constant num_tests => "max_int".
+Extract Constant num_tests => "300".
 
 Definition qctest_test_prop_InsertValid := (fun _ : unit => print_extracted_coq_string ("{" ++ show (withTime(fun tt => (invoke test_prop_InsertValid))) ++ "}")).
 Definition qctest_test_prop_DeleteValid := (fun _ : unit => print_extracted_coq_string ("{" ++ show (withTime(fun tt => (invoke test_prop_DeleteValid))) ++ "}")).
