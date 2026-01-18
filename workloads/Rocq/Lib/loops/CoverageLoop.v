@@ -174,7 +174,7 @@ Eval compute in splitN 2 3.
 
 (* ---------- Coverage computation ---------- *)
 
-Fixpoint covers' {C} `{Dec_Eq C} (n : nat) (t : Term C) (f : nat) : list (Desc C) :=
+Fixpoint covers' {C} `{Dec_Eq C} `{Show C} (n : nat) (t : Term C) (f : nat) : list (Desc C) :=
   match f with
   | O => []
   | S f' =>
@@ -203,7 +203,7 @@ Fixpoint covers' {C} `{Dec_Eq C} (n : nat) (t : Term C) (f : nat) : list (Desc C
     end
   end.
 
-Definition covers {C} `{Dec_Eq C} (n : nat) (t : Term C) : list (Desc C) :=
+Definition covers {C} `{Dec_Eq C} `{Show C} (n : nat) (t : Term C) : list (Desc C) :=
   covers' n t 1000.
 
 (* ---------- Hypothesis Table (HT) for type-directed generation ---------- *)
@@ -419,7 +419,7 @@ Definition update_coverage {C} `{Dec_Eq C}
 
 (* Coverage-guided loop with fanout selection *)
 Definition coverage_loop_guided
-  {C : Type} `{Dec_Eq C}
+  {C : Type} `{Dec_Eq C} `{Show C}
   (fuel : nat)
   (cprop : CProp ∅)
   (strength : nat)
@@ -435,40 +435,48 @@ Definition coverage_loop_guided
     match fuel with
     | O => ret (mkResult discards false passed [])
     | S fuel' =>
-        (* Generate fanout candidates *)
+        (* Step 1: Generate N candidates (no running yet) *)
         candidates <-
-          sequenceG (repeat fanout (generate_and_run cprop 0));;
-        (* Find the best candidate based on coverage improvement *)
+          sequenceG (repeat fanout (generate_cprop cprop (Nat.log2 (passed + discards)%nat)));;
+        (* Step 2: Score candidates by coverage improvement BEFORE running *)
         let scored :=
-          map (fun res =>
-            match res with
-            | Normal seed _ =>
-                let term := to_term seed in
+          map (fun gen_input =>
+            match lift_opt_cprop cprop gen_input with
+            | Some inps =>
+                let term := to_term inps in
                 let ds := covers strength term in
                 let improvement := coverage_improvement ds seen in
-                (res, ds, improvement)
-            | Discard _ _ => (res, [], 0)
+                (Some inps, ds, improvement)
+            | None =>
+                (None, [], 0)
             end) candidates in
-        (* Select best candidate (highest improvement) *)
-        let default := (Discard (none_cprop cprop) GenerationFailure, @nil (Desc C), 0) in
+        (* Step 3: Pick the best candidate *)
+        let default := (@None ⟦⦗cprop⦘⟧, @nil (Desc C), 0) in
         let best :=
           fold_left (fun acc x =>
             match acc, x with
             | (_, _, imp1), (_, _, imp2) =>
                 if Nat.ltb imp1 imp2 then x else acc
             end) scored (list_hd default scored) in
+        (* Step 4: Run only the best one (like a single runLoop iteration) *)
         match best with
-        | (Normal seed false, _, _) =>
-            (* Found a bug *)
-            let shrunk := shrinker cprop seed in
-            let printed := printer cprop shrunk in
-            ret (mkResult discards true (passed + 1) printed)
-        | (Normal seed true, ds, _) =>
-            (* Passes - update coverage and continue *)
-            let seen' := update_coverage ds seen in
-            aux fuel' (passed + 1) discards seen'
-        | (Discard _ _, _, _) =>
-            (* All candidates discarded *)
+        | (Some inps, ds, _) =>
+            match run_cprop cprop 0 inps with
+            | Some false =>
+                (* Failure - found a bug *)
+                let shrunk := shrinker cprop inps in
+                let printed := printer cprop shrunk in
+                ret (mkResult discards true (passed + 1) printed)
+            | Some true =>
+                (* Pass - update coverage and continue *)
+                let seen' := update_coverage ds seen in
+                aux fuel' (passed + 1) discards seen'
+            | None =>
+                (* Discard - precondition failed *)
+                aux fuel' passed (discards + 1) seen
+            end
+        | (None, _, _) =>
+            (* All candidates failed generation - discard and continue *)
             aux fuel' passed (discards + 1) seen
         end
     end in
