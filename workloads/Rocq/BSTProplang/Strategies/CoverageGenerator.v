@@ -297,3 +297,185 @@ Definition term_UnionDeleteInsert (input : ⟦⦗prop_UnionDeleteInsert⦘⟧) :
   end.
 
 Definition test_prop_UnionDeleteInsert := coverage_loop_guided number_of_trials prop_UnionDeleteInsert coverage_strength coverage_fanout term_UnionDeleteInsert.
+
+(* ---------- DeleteValid property ---------- *)
+
+Definition prop_DeleteValid :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  ForAll "k" (fun _ => arbitrary) (fun _ n => arbitrary) (fun _ => shrink) (fun _ => show) (
+  Check (nat · (Tree · ∅))
+  (fun '(k, (t, _)) => (isBST (delete k t)))))).
+
+Definition term_DeleteValid (input : ⟦⦗prop_DeleteValid⦘⟧) : Term Tree :=
+  match input with (t, _) => term_of_bst t end.
+
+Definition test_prop_DeleteValid := coverage_loop_guided number_of_trials prop_DeleteValid coverage_strength coverage_fanout term_DeleteValid.
+
+(* ---------- UnionValid property ---------- *)
+
+Definition prop_UnionValid :=
+  @ForAll _ ∅ "t1" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t1, _) => isBST t1) (
+  @ForAll _ (Tree · ∅) "t2" (fun '(_, s) => bespoke s) (fun '(_, s) _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · _) (fun '(t2, _) => isBST t2) (
+  Check (Tree · (Tree · ∅))
+  (fun '(t2, (t1, _)) => (isBST (union t1 t2))))))).
+
+Definition term_UnionValid (input : ⟦⦗prop_UnionValid⦘⟧) : Term Tree :=
+  match input with (t1, (t2, _)) =>
+    CoverageLoop.T (union t1 t2) [term_of_bst t1; term_of_bst t2]
+  end.
+
+Definition test_prop_UnionValid := coverage_loop_guided number_of_trials prop_UnionValid coverage_strength coverage_fanout term_UnionValid.
+
+(* ---------- DeletePost property ---------- *)
+
+Definition prop_DeletePost :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  ForAll "k" (fun _ => arbitrary) (fun _ _ => arbitrary) (fun _ => shrink) (fun _ => show) (
+  ForAll "k'" (fun _ => arbitrary) (fun _ _ => arbitrary) (fun _ => shrink) (fun _ => show) (
+  Check (nat · (nat · (Tree · ∅)))
+  (fun '(k', (k, (t, _))) => ((find k' (delete k t) = if k =? k' then None else find k' t)?)))))).
+
+Definition term_DeletePost (input : ⟦⦗prop_DeletePost⦘⟧) : Term Tree :=
+  match input with (t, _) => term_of_bst t end.
+
+Definition test_prop_DeletePost := coverage_loop_guided number_of_trials prop_DeletePost coverage_strength coverage_fanout term_DeletePost.
+
+(* ---------- UnionPost property ---------- *)
+
+Definition prop_UnionPost :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  @ForAll _ (Tree · ∅) "t'" (fun '(_, s) => bespoke s) (fun '(_, s) _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  ForAll "k" (fun _ => arbitrary) (fun _ k => arbitrary) (fun _ => shrink) (fun _ => show) (
+  Check (nat · (Tree · (Tree · ∅)))
+  (fun '(k, (t', (t, _))) => (let lhs := find k (union t t') in
+                              match (find k t) with
+                              | Some rhs => (lhs = (Some rhs))?
+                              | None => match (find k t') with
+                                        | Some rhs => (lhs = (Some rhs))?
+                                        | None => (lhs = None)?
+                                        end
+                              end)))))).
+
+Definition term_UnionPost (input : ⟦⦗prop_UnionPost⦘⟧) : Term Tree :=
+  match input with (t, (t', _)) =>
+    CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
+  end.
+
+Definition test_prop_UnionPost := coverage_loop_guided number_of_trials prop_UnionPost coverage_strength coverage_fanout term_UnionPost.
+
+(* ---------- DeleteModel property ---------- *)
+
+Definition prop_DeleteModel :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  ForAll "k" (fun _ => arbitrary) (fun _ t => arbitrary) (fun _ => shrink) (fun _ => show) (
+  Check (nat · (Tree · ∅))
+  (fun '(k, (t, _)) => ((toList (delete k t) = deleteKey k (toList t))?))))).
+
+Definition term_DeleteModel (input : ⟦⦗prop_DeleteModel⦘⟧) : Term Tree :=
+  match input with (t, _) => term_of_bst t end.
+
+Definition test_prop_DeleteModel := coverage_loop_guided number_of_trials prop_DeleteModel coverage_strength coverage_fanout term_DeleteModel.
+
+(* ---------- UnionModel property ---------- *)
+
+Definition prop_UnionModel :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  @ForAll _ (Tree · ∅) "t'" (fun '(_, s) => bespoke s) (fun '(_, s) _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · _) (fun '(t', _) => isBST t') (
+  Check (Tree · (Tree · ∅))
+  (fun '(t', (t, _)) => ((toList (union t t') = L_sort (L_unionBy (fun x y => x) (toList t) (toList t')))?)))))).
+
+Definition term_UnionModel (input : ⟦⦗prop_UnionModel⦘⟧) : Term Tree :=
+  match input with (t, (t', _)) =>
+    CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
+  end.
+
+Definition test_prop_UnionModel := coverage_loop_guided number_of_trials prop_UnionModel coverage_strength coverage_fanout term_UnionModel.
+
+(* ---------- InsertDelete property ---------- *)
+
+Definition prop_InsertDelete :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  ForAll "k" (fun _ => arbitrary) (fun _ k => arbitrary) (fun _ => shrink) (fun _ => show) (
+  ForAll "k'" (fun _ => arbitrary) (fun _ k' => arbitrary) (fun _ => shrink) (fun _ => show) (
+  ForAll "v" (fun _ => arbitrary) (fun _ v => arbitrary) (fun _ => shrink) (fun _ => show) (
+  Check (nat · (nat · (nat · (Tree · ∅))))
+  (fun '(v, (k', (k, (t, _)))) => ((insert k v (delete k' t) =|= if k =? k' then insert k v t else delete k' (insert k v t))))))))).
+
+Definition term_InsertDelete (input : ⟦⦗prop_InsertDelete⦘⟧) : Term Tree :=
+  match input with (t, _) => term_of_bst t end.
+
+Definition test_prop_InsertDelete := coverage_loop_guided number_of_trials prop_InsertDelete coverage_strength coverage_fanout term_InsertDelete.
+
+(* ---------- DeleteDelete property ---------- *)
+
+Definition prop_DeleteDelete :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  ForAll "k" (fun _ => arbitrary) (fun _ t => arbitrary) (fun _ => shrink) (fun _ => show) (
+  ForAll "k'" (fun _ => arbitrary) (fun _ n => arbitrary) (fun _ => shrink) (fun _ => show) (
+  Check (nat · (nat · (Tree · ∅)))
+  (fun '(k', (k, (t, _))) => ((delete k (delete k' t) =|= delete k' (delete k t)))))))).
+
+Definition term_DeleteDelete (input : ⟦⦗prop_DeleteDelete⦘⟧) : Term Tree :=
+  match input with (t, _) => term_of_bst t end.
+
+Definition test_prop_DeleteDelete := coverage_loop_guided number_of_trials prop_DeleteDelete coverage_strength coverage_fanout term_DeleteDelete.
+
+(* ---------- DeleteUnion property ---------- *)
+
+Definition prop_DeleteUnion :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  @ForAll _ (Tree · ∅) "t'" (fun '(_, s) => bespoke s) (fun '(_, s) _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · _) (fun '(t', _) => isBST t') (
+  ForAll "k" (fun _ => arbitrary) (fun _ k => arbitrary) (fun _ => shrink) (fun _ => show) (
+  Check (nat · (Tree · (Tree · ∅)))
+  (fun '(k, (t', (t, _))) => (delete k (union t t') =|= union (delete k t) (delete k t')))))))).
+
+Definition term_DeleteUnion (input : ⟦⦗prop_DeleteUnion⦘⟧) : Term Tree :=
+  match input with (t, (t', _)) =>
+    CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
+  end.
+
+Definition test_prop_DeleteUnion := coverage_loop_guided number_of_trials prop_DeleteUnion coverage_strength coverage_fanout term_DeleteUnion.
+
+(* ---------- UnionUnionIdem property ---------- *)
+
+Definition prop_UnionUnionIdem :=
+  @ForAll _ ∅ "t" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t, _) => isBST t) (
+  Check (Tree · ∅)
+  (fun '(t, _) => (union t t =|= t)))).
+
+Definition term_UnionUnionIdem (input : ⟦⦗prop_UnionUnionIdem⦘⟧) : Term Tree :=
+  match input with (t, _) => term_of_bst t end.
+
+Definition test_prop_UnionUnionIdem := coverage_loop_guided number_of_trials prop_UnionUnionIdem coverage_strength coverage_fanout term_UnionUnionIdem.
+
+(* ---------- UnionUnionAssoc property ---------- *)
+
+Definition prop_UnionUnionAssoc :=
+  @ForAll _ ∅ "t1" bespoke (fun s _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · ∅) (fun '(t1, _) => isBST t1) (
+  @ForAll _ (Tree · ∅) "t2" (fun '(_, s) => bespoke s) (fun '(_, s) _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · _) (fun '(t2, _) => isBST t2) (
+  @ForAll _ (Tree · (Tree · ∅)) "t3" (fun '(_, (_, s)) => bespoke s) (fun '(_, (_, s)) _ => bespoke s) (fun _ => shrink) (fun _ => show) (
+  Implies (Tree · _) (fun '(t3, _) => isBST t3) (
+  Check (Tree · (Tree · (Tree · ∅)))
+  (fun '(t3, (t2, (t1, _))) => (union (union t1 t2) t3 =|= union t1 (union t2 t3)))))))))).
+
+Definition term_UnionUnionAssoc (input : ⟦⦗prop_UnionUnionAssoc⦘⟧) : Term Tree :=
+  match input with (t1, (t2, (t3, _))) =>
+    CoverageLoop.T (union (union t1 t2) t3) [term_of_bst t1; term_of_bst t2; term_of_bst t3]
+  end.
+
+Definition test_prop_UnionUnionAssoc := coverage_loop_guided number_of_trials prop_UnionUnionAssoc coverage_strength coverage_fanout term_UnionUnionAssoc.
