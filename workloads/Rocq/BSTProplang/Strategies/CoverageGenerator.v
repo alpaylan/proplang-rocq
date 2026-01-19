@@ -122,8 +122,8 @@ Definition timedRunLoop (max_time : nat) (cprop : CProp ∅): G TimedResult :=
 
 (* ---------- Coverage-guided timed loop ---------- *)
 
-Definition coverage_strength : nat := 1.  (* reduced from 2 for performance *)
-Definition coverage_fanout : nat := 1.   (* reduced from 10 for performance *)
+Definition coverage_strength : nat := 2.  (* reduced from 2 for performance *)
+Definition coverage_fanout : nat := 5.   (* reduced from 10 for performance *)
 
 Definition timedCoverageLoop (max_time : nat) (cprop : CProp ∅)
   (to_term : ⟦⦗cprop⦘⟧ -> Term Tree) : G TimedResult :=
