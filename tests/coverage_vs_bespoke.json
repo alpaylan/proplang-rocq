@@ -6,7 +6,7 @@
             "insert_1"
         ],
         "trials": 10,
-        "timeout": 30,
+        "timeout": 120,
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
@@ -65,7 +65,7 @@
             "insert_2"
         ],
         "trials": 10,
-        "timeout": 30,
+        "timeout": 120,
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
@@ -132,7 +132,7 @@
             "insert_3"
         ],
         "trials": 10,
-        "timeout": 30,
+        "timeout": 120,
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
@@ -191,7 +191,7 @@
             "delete_4"
         ],
         "trials": 10,
-        "timeout": 30,
+        "timeout": 120,
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
@@ -258,7 +258,7 @@
             "delete_5"
         ],
         "trials": 10,
-        "timeout": 30,
+        "timeout": 120,
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
@@ -317,7 +317,7 @@
             "union_6"
         ],
         "trials": 10,
-        "timeout": 30,
+        "timeout": 120,
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
@@ -384,7 +384,7 @@
             "union_7"
         ],
         "trials": 10,
-        "timeout": 30,
+        "timeout": 120,
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
@@ -451,7 +451,7 @@
             "union_8"
         ],
         "trials": 10,
-        "timeout": 30,
+        "timeout": 120,
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
