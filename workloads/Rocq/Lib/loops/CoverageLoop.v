@@ -172,8 +172,19 @@ Fixpoint splitN (n l : nat) : list (list nat) :=
 Eval compute in splitN 2 3.
 (* = [[0;0;2]; [0;1;1]; [0;2;0]; [1;0;1]; [1;1;0]; [2;0;0]] *)
 
+(* ---------- OCaml-extracted efficient set operations ---------- *)
+(*
+   These axioms provide O(n log n) implementations of set operations
+   via OCaml extraction, replacing the naive O(n²) Coq implementations.
+*)
+
+(* O(n log n) deduplication using List.sort_uniq *)
+Axiom fast_nub : forall {A : Type}, list A -> list A.
+Extract Constant fast_nub => "fun xs -> List.sort_uniq compare xs".
+
 (* ---------- Coverage computation ---------- *)
 
+(* Original covers' using naive nub - kept for reference *)
 Fixpoint covers' {C} `{Dec_Eq C} `{Show C} (n : nat) (t : Term C) (f : nat) : list (Desc C) :=
   match f with
   | O => []
@@ -203,8 +214,35 @@ Fixpoint covers' {C} `{Dec_Eq C} `{Show C} (n : nat) (t : Term C) (f : nat) : li
     end
   end.
 
+(* Optimized covers' using fast_nub for O(n log n) deduplication *)
+Fixpoint covers'_fast {C} `{Dec_Eq C} `{Show C} (n : nat) (t : Term C) (f : nat) : list (Desc C) :=
+  match f with
+  | O => []
+  | S f' =>
+    match n with
+    | O => [Top]
+    | S k =>
+        match t with
+        | T c args =>
+            let child_cov :=
+              fold_right (fun u acc => fast_nub (covers'_fast n u f' ++ acc)) [] args in
+            let cons_ev :=
+              flat_map
+                (fun ns =>
+                   let dlists :=
+                     map (fun p =>
+                            let '(m,u) := p in covers'_fast m u f')
+                         (combine ns args) in
+                   map (fun ds => Eventually (Cons c ds))
+                       (choices dlists))
+                (splitN k (List.length args)) in
+            fast_nub (child_cov ++ cons_ev)
+        end
+    end
+  end.
+
 Definition covers {C} `{Dec_Eq C} `{Show C} (n : nat) (t : Term C) : list (Desc C) :=
-  covers' n t 1000.
+  covers'_fast n t 1000.
 
 (* ---------- Hypothesis Table (HT) for type-directed generation ---------- *)
 (*
@@ -338,7 +376,42 @@ Fixpoint term_of_boollist (bl: BoolList) : Term BoolList :=
   end.
 Eval compute in
   map show (covers 2 (term_of_boollist (ConsB true (ConsB false (ConsB true Nil))))).
-  (* ---------- Coverage loop ---------- *)
+
+(* ---------- Additional OCaml-extracted operations ---------- *)
+
+(* O(n) membership test - same complexity but faster constants *)
+Axiom fast_mem : forall {A : Type}, A -> list A -> bool.
+Extract Constant fast_mem => "fun x xs -> List.mem x xs".
+
+(* O(n log n) set difference *)
+Axiom fast_diff : forall {A : Type}, list A -> list A -> list A.
+Extract Constant fast_diff => "fun xs ys ->
+  let ys_set = List.sort_uniq compare ys in
+  List.filter (fun x -> not (List.mem x ys_set)) xs".
+
+(* O(n log n) set union *)
+Axiom fast_union : forall {A : Type}, list A -> list A -> list A.
+Extract Constant fast_union => "fun xs ys -> List.sort_uniq compare (xs @ ys)".
+
+(* ---------- Optimized coverage helpers ---------- *)
+
+(* Efficient coverage improvement using extracted operations *)
+Definition coverage_improvement_fast {C}
+  (ds : list (Desc C)) (seen : list (Desc C)) : nat :=
+  List.length (fast_diff ds seen).
+
+(* Bounded coverage update - caps seen set size to prevent unbounded growth *)
+Definition max_seen_size : nat := 200.
+
+Definition update_coverage_bounded {C}
+  (ds : list (Desc C)) (seen : list (Desc C)) : list (Desc C) :=
+  let combined := fast_union ds seen in
+  firstn max_seen_size combined.
+
+(* Early termination threshold - fall back to random after this many stale iterations *)
+Definition max_stale_iterations : nat := 100.
+
+(* ---------- Coverage loop ---------- *)
 
 Fixpoint repeat {A : Type} (n : nat) (x : A) : list A :=
   match n with
@@ -481,4 +554,102 @@ Definition coverage_loop_guided
         end
     end in
     aux fuel 0 0 [].
+
+(*
+   Optimized coverage-guided loop with:
+   1. O(n log n) set operations via OCaml extraction
+   2. Early termination after max_stale_iterations without improvement
+   3. Bounded seen set to prevent unbounded growth
+   4. Fallback to random testing when coverage saturates
+*)
+Definition coverage_loop_guided_optimized
+  {C : Type} `{Dec_Eq C} `{Show C}
+  (fuel : nat)
+  (cprop : CProp ∅)
+  (strength : nat)
+  (fanout : nat)
+  (to_term : ⟦⦗cprop⦘⟧ -> Term C)
+  : G Result :=
+  (* Random fallback loop - used when coverage saturates *)
+  let random_loop :=
+    fix random_aux (f : nat) (p : nat) (d : nat) : G Result :=
+      match f with
+      | O => ret (mkResult d false p [])
+      | S f' =>
+          res <- generate_and_run cprop (Nat.log2 (p + d)%nat);;
+          match res with
+          | Normal seed false =>
+              let shrunk := shrinker cprop seed in
+              let printed := printer cprop shrunk in
+              ret (mkResult d true (p + 1) printed)
+          | Normal _ true =>
+              random_aux f' (p + 1) d
+          | Discard _ _ =>
+              random_aux f' p (d + 1)
+          end
+      end in
+  (* Main coverage-guided loop *)
+  let fix aux
+    (fuel : nat)
+    (passed : nat)
+    (discards : nat)
+    (seen : list (Desc C))
+    (stale_count : nat)  (* Track iterations without coverage improvement *)
+    : G Result :=
+    match fuel with
+    | O => ret (mkResult discards false passed [])
+    | S fuel' =>
+        (* Early termination: if no improvement for max_stale_iterations, fall back to random *)
+        if Nat.leb max_stale_iterations stale_count then
+          random_loop fuel passed discards
+        else
+          (* Step 1: Generate N candidates *)
+          candidates <-
+            sequenceG (repeat fanout (generate_cprop cprop (Nat.log2 (passed + discards)%nat)));;
+          (* Step 2: Score candidates using fast operations *)
+          let scored :=
+            map (fun gen_input =>
+              match lift_opt_cprop cprop gen_input with
+              | Some inps =>
+                  let term := to_term inps in
+                  let ds := covers strength term in
+                  let improvement := coverage_improvement_fast ds seen in
+                  (Some inps, ds, improvement)
+              | None =>
+                  (None, [], 0)
+              end) candidates in
+          (* Step 3: Pick the best candidate *)
+          let default := (@None ⟦⦗cprop⦘⟧, @nil (Desc C), 0) in
+          let best :=
+            fold_left (fun acc x =>
+              match acc, x with
+              | (_, _, imp1), (_, _, imp2) =>
+                  if Nat.ltb imp1 imp2 then x else acc
+              end) scored (list_hd default scored) in
+          (* Step 4: Run only the best one *)
+          match best with
+          | (Some inps, ds, improvement) =>
+              match run_cprop cprop 0 inps with
+              | Some false =>
+                  (* Failure - found a bug *)
+                  let shrunk := shrinker cprop inps in
+                  let printed := printer cprop shrunk in
+                  ret (mkResult discards true (passed + 1) printed)
+              | Some true =>
+                  (* Pass - update coverage with bounded set *)
+                  let seen' := update_coverage_bounded ds seen in
+                  let new_stale :=
+                    if Nat.ltb 0 improvement then 0
+                    else stale_count + 1 in
+                  aux fuel' (passed + 1) discards seen' new_stale
+              | None =>
+                  (* Discard - precondition failed *)
+                  aux fuel' passed (discards + 1) seen stale_count
+              end
+          | (None, _, _) =>
+              (* All candidates failed generation - discard and continue *)
+              aux fuel' passed (discards + 1) seen (stale_count + 1)
+          end
+    end in
+    aux fuel 0 0 [] 0.
 

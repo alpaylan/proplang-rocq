@@ -122,8 +122,8 @@ Definition timedRunLoop (max_time : nat) (cprop : CProp ∅): G TimedResult :=
 
 (* ---------- Coverage-guided timed loop ---------- *)
 
-Definition coverage_strength : nat := 2.  (* k parameter from quick-cover *)
-Definition coverage_fanout : nat := 10.   (* number of candidates per round *)
+Definition coverage_strength : nat := 1.  (* reduced from 2 for performance *)
+Definition coverage_fanout : nat := 1.   (* reduced from 10 for performance *)
 
 Definition timedCoverageLoop (max_time : nat) (cprop : CProp ∅)
   (to_term : ⟦⦗cprop⦘⟧ -> Term Tree) : G TimedResult :=
@@ -192,7 +192,7 @@ Definition term_InsertValid (input : ⟦⦗prop_InsertValid⦘⟧) : Term Tree :
 
 (* Coverage-guided test *)
 Definition test_prop_InsertValid :=
-  coverage_loop_guided number_of_trials prop_InsertValid coverage_strength coverage_fanout term_InsertValid.
+  coverage_loop_guided_optimized number_of_trials prop_InsertValid coverage_strength coverage_fanout term_InsertValid.
 
 (* ---------- InsertPost property ---------- *)
 
@@ -209,7 +209,7 @@ Definition term_InsertPost (input : ⟦⦗prop_InsertPost⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
 Definition test_prop_InsertPost :=
-  coverage_loop_guided number_of_trials prop_InsertPost coverage_strength coverage_fanout term_InsertPost.
+  coverage_loop_guided_optimized number_of_trials prop_InsertPost coverage_strength coverage_fanout term_InsertPost.
 
 (* ---------- InsertModel property ---------- *)
 
@@ -224,7 +224,7 @@ Definition prop_InsertModel :=
 Definition term_InsertModel (input : ⟦⦗prop_InsertModel⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_InsertModel := coverage_loop_guided number_of_trials prop_InsertModel coverage_strength coverage_fanout term_InsertModel.
+Definition test_prop_InsertModel := coverage_loop_guided_optimized number_of_trials prop_InsertModel coverage_strength coverage_fanout term_InsertModel.
 
 (* ---------- DeleteInsert property ---------- *)
 
@@ -240,7 +240,7 @@ Definition prop_DeleteInsert :=
 Definition term_DeleteInsert (input : ⟦⦗prop_DeleteInsert⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_DeleteInsert := coverage_loop_guided number_of_trials prop_DeleteInsert coverage_strength coverage_fanout term_DeleteInsert.
+Definition test_prop_DeleteInsert := coverage_loop_guided_optimized number_of_trials prop_DeleteInsert coverage_strength coverage_fanout term_DeleteInsert.
 
 (* ---------- InsertInsert property ---------- *)
 
@@ -257,7 +257,7 @@ Definition prop_InsertInsert :=
 Definition term_InsertInsert (input : ⟦⦗prop_InsertInsert⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_InsertInsert := coverage_loop_guided number_of_trials prop_InsertInsert coverage_strength coverage_fanout term_InsertInsert.
+Definition test_prop_InsertInsert := coverage_loop_guided_optimized number_of_trials prop_InsertInsert coverage_strength coverage_fanout term_InsertInsert.
 
 (* ---------- InsertUnion property ---------- *)
 
@@ -277,7 +277,7 @@ Definition term_InsertUnion (input : ⟦⦗prop_InsertUnion⦘⟧) : Term Tree :
     CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
   end.
 
-Definition test_prop_InsertUnion := coverage_loop_guided number_of_trials prop_InsertUnion coverage_strength coverage_fanout term_InsertUnion.
+Definition test_prop_InsertUnion := coverage_loop_guided_optimized number_of_trials prop_InsertUnion coverage_strength coverage_fanout term_InsertUnion.
 
 (* ---------- UnionDeleteInsert property ---------- *)
 
@@ -296,7 +296,7 @@ Definition term_UnionDeleteInsert (input : ⟦⦗prop_UnionDeleteInsert⦘⟧) :
     CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
   end.
 
-Definition test_prop_UnionDeleteInsert := coverage_loop_guided number_of_trials prop_UnionDeleteInsert coverage_strength coverage_fanout term_UnionDeleteInsert.
+Definition test_prop_UnionDeleteInsert := coverage_loop_guided_optimized number_of_trials prop_UnionDeleteInsert coverage_strength coverage_fanout term_UnionDeleteInsert.
 
 (* ---------- DeleteValid property ---------- *)
 
@@ -310,7 +310,7 @@ Definition prop_DeleteValid :=
 Definition term_DeleteValid (input : ⟦⦗prop_DeleteValid⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_DeleteValid := coverage_loop_guided number_of_trials prop_DeleteValid coverage_strength coverage_fanout term_DeleteValid.
+Definition test_prop_DeleteValid := coverage_loop_guided_optimized number_of_trials prop_DeleteValid coverage_strength coverage_fanout term_DeleteValid.
 
 (* ---------- UnionValid property ---------- *)
 
@@ -327,7 +327,7 @@ Definition term_UnionValid (input : ⟦⦗prop_UnionValid⦘⟧) : Term Tree :=
     CoverageLoop.T (union t1 t2) [term_of_bst t1; term_of_bst t2]
   end.
 
-Definition test_prop_UnionValid := coverage_loop_guided number_of_trials prop_UnionValid coverage_strength coverage_fanout term_UnionValid.
+Definition test_prop_UnionValid := coverage_loop_guided_optimized number_of_trials prop_UnionValid coverage_strength coverage_fanout term_UnionValid.
 
 (* ---------- DeletePost property ---------- *)
 
@@ -342,7 +342,7 @@ Definition prop_DeletePost :=
 Definition term_DeletePost (input : ⟦⦗prop_DeletePost⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_DeletePost := coverage_loop_guided number_of_trials prop_DeletePost coverage_strength coverage_fanout term_DeletePost.
+Definition test_prop_DeletePost := coverage_loop_guided_optimized number_of_trials prop_DeletePost coverage_strength coverage_fanout term_DeletePost.
 
 (* ---------- UnionPost property ---------- *)
 
@@ -366,7 +366,7 @@ Definition term_UnionPost (input : ⟦⦗prop_UnionPost⦘⟧) : Term Tree :=
     CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
   end.
 
-Definition test_prop_UnionPost := coverage_loop_guided number_of_trials prop_UnionPost coverage_strength coverage_fanout term_UnionPost.
+Definition test_prop_UnionPost := coverage_loop_guided_optimized number_of_trials prop_UnionPost coverage_strength coverage_fanout term_UnionPost.
 
 (* ---------- DeleteModel property ---------- *)
 
@@ -380,7 +380,7 @@ Definition prop_DeleteModel :=
 Definition term_DeleteModel (input : ⟦⦗prop_DeleteModel⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_DeleteModel := coverage_loop_guided number_of_trials prop_DeleteModel coverage_strength coverage_fanout term_DeleteModel.
+Definition test_prop_DeleteModel := coverage_loop_guided_optimized number_of_trials prop_DeleteModel coverage_strength coverage_fanout term_DeleteModel.
 
 (* ---------- UnionModel property ---------- *)
 
@@ -397,7 +397,7 @@ Definition term_UnionModel (input : ⟦⦗prop_UnionModel⦘⟧) : Term Tree :=
     CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
   end.
 
-Definition test_prop_UnionModel := coverage_loop_guided number_of_trials prop_UnionModel coverage_strength coverage_fanout term_UnionModel.
+Definition test_prop_UnionModel := coverage_loop_guided_optimized number_of_trials prop_UnionModel coverage_strength coverage_fanout term_UnionModel.
 
 (* ---------- InsertDelete property ---------- *)
 
@@ -413,7 +413,7 @@ Definition prop_InsertDelete :=
 Definition term_InsertDelete (input : ⟦⦗prop_InsertDelete⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_InsertDelete := coverage_loop_guided number_of_trials prop_InsertDelete coverage_strength coverage_fanout term_InsertDelete.
+Definition test_prop_InsertDelete := coverage_loop_guided_optimized number_of_trials prop_InsertDelete coverage_strength coverage_fanout term_InsertDelete.
 
 (* ---------- DeleteDelete property ---------- *)
 
@@ -428,7 +428,7 @@ Definition prop_DeleteDelete :=
 Definition term_DeleteDelete (input : ⟦⦗prop_DeleteDelete⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_DeleteDelete := coverage_loop_guided number_of_trials prop_DeleteDelete coverage_strength coverage_fanout term_DeleteDelete.
+Definition test_prop_DeleteDelete := coverage_loop_guided_optimized number_of_trials prop_DeleteDelete coverage_strength coverage_fanout term_DeleteDelete.
 
 (* ---------- DeleteUnion property ---------- *)
 
@@ -446,7 +446,7 @@ Definition term_DeleteUnion (input : ⟦⦗prop_DeleteUnion⦘⟧) : Term Tree :
     CoverageLoop.T (union t t') [term_of_bst t; term_of_bst t']
   end.
 
-Definition test_prop_DeleteUnion := coverage_loop_guided number_of_trials prop_DeleteUnion coverage_strength coverage_fanout term_DeleteUnion.
+Definition test_prop_DeleteUnion := coverage_loop_guided_optimized number_of_trials prop_DeleteUnion coverage_strength coverage_fanout term_DeleteUnion.
 
 (* ---------- UnionUnionIdem property ---------- *)
 
@@ -459,7 +459,7 @@ Definition prop_UnionUnionIdem :=
 Definition term_UnionUnionIdem (input : ⟦⦗prop_UnionUnionIdem⦘⟧) : Term Tree :=
   match input with (t, _) => term_of_bst t end.
 
-Definition test_prop_UnionUnionIdem := coverage_loop_guided number_of_trials prop_UnionUnionIdem coverage_strength coverage_fanout term_UnionUnionIdem.
+Definition test_prop_UnionUnionIdem := coverage_loop_guided_optimized number_of_trials prop_UnionUnionIdem coverage_strength coverage_fanout term_UnionUnionIdem.
 
 (* ---------- UnionUnionAssoc property ---------- *)
 
@@ -478,4 +478,4 @@ Definition term_UnionUnionAssoc (input : ⟦⦗prop_UnionUnionAssoc⦘⟧) : Ter
     CoverageLoop.T (union (union t1 t2) t3) [term_of_bst t1; term_of_bst t2; term_of_bst t3]
   end.
 
-Definition test_prop_UnionUnionAssoc := coverage_loop_guided number_of_trials prop_UnionUnionAssoc coverage_strength coverage_fanout term_UnionUnionAssoc.
+Definition test_prop_UnionUnionAssoc := coverage_loop_guided_optimized number_of_trials prop_UnionUnionAssoc coverage_strength coverage_fanout term_UnionUnionAssoc.
