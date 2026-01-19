@@ -54,15 +54,15 @@ Fixpoint delete (k: nat) (t: Tree) :=
   | Leaf => Leaf
   | Node l k' v' r =>
   (*! *)
+  (*!
   if k <? k' then Node (delete k l) k' v' r
   else if k' <? k then Node l k' v' (delete k r)
   else join l r
+  *)
   (*!! delete_4 *)
-  (*!
   if k <? k' then delete k l
   else if k' <? k then delete k r
   else join l r
-  *)
   (*!! delete_5 *)
   (*!
   if k' <? k then Node (delete k l) k' v' r
