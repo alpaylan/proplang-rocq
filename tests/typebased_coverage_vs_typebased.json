@@ -1,0 +1,506 @@
+[
+    {
+        "language": "Rocq",
+        "workload": "BSTProplang",
+        "mutations": [
+            "insert_1"
+        ],
+        "trials": 10,
+        "timeout": 600,
+        "tasks": [
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertPost"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertPost"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertModel"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertModel"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionDeleteInsert"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "BSTProplang",
+        "mutations": [
+            "insert_2"
+        ],
+        "trials": 10,
+        "timeout": 600,
+        "tasks": [
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertPost"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertPost"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertModel"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertModel"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertDelete"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertDelete"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionDeleteInsert"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "BSTProplang",
+        "mutations": [
+            "insert_3"
+        ],
+        "trials": 10,
+        "timeout": 600,
+        "tasks": [
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertPost"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertPost"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertModel"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertModel"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertDelete"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertDelete"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionDeleteInsert"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "BSTProplang",
+        "mutations": [
+            "delete_4"
+        ],
+        "trials": 10,
+        "timeout": 600,
+        "tasks": [
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteModel"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteModel"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeletePost"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeletePost"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteDelete"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteDelete"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertDelete"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertDelete"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionDeleteInsert"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "BSTProplang",
+        "mutations": [
+            "delete_5"
+        ],
+        "trials": 10,
+        "timeout": 600,
+        "tasks": [
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteModel"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteModel"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeletePost"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeletePost"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteDelete"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteDelete"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionDeleteInsert"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "BSTProplang",
+        "mutations": [
+            "union_6"
+        ],
+        "trials": 10,
+        "timeout": 600,
+        "tasks": [
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionValid"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionValid"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionPost"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionPost"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionModel"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionModel"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionUnionAssoc"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionUnionAssoc"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "BSTProplang",
+        "mutations": [
+            "union_7"
+        ],
+        "trials": 10,
+        "timeout": 600,
+        "tasks": [
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionValid"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionValid"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionPost"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionPost"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionModel"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionModel"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionUnionAssoc"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionUnionAssoc"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "BSTProplang",
+        "mutations": [
+            "union_8"
+        ],
+        "trials": 10,
+        "timeout": 600,
+        "tasks": [
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionPost"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionPost"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionModel"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionModel"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "DeleteUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "InsertUnion"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionDeleteInsert"
+            },
+            {
+                "strategy": "TypeBasedGenerator",
+                "property": "UnionUnionAssoc"
+            },
+            {
+                "strategy": "TypeBasedCoverageGenerator",
+                "property": "UnionUnionAssoc"
+            }
+        ]
+    }
+]

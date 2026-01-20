@@ -107,13 +107,21 @@
     "TypeBasedGenerator": [
       "generator"
     ],
+    "CoverageGenerator": [
+      "generator"
+    ],
+    "TypeBasedCoverageGenerator": [
+      "generator"
+    ],
     "TypeBasedFuzzer": [
       "fuzzer"
     ],
     "generator": [
       "BespokeGenerator",
       "SpecificationBasedGenerator",
-      "TypeBasedGenerator"
+      "TypeBasedGenerator",
+      "CoverageGenerator",
+      "TypeBasedCoverageGenerator"
     ],
     "fuzzer": [
       "TypeBasedFuzzer"
