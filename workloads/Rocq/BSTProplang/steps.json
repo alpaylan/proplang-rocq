@@ -2,10 +2,17 @@
   "setup_steps": [
     {
       "Command": {
-        "command": "coqc",
+        "command": "make",
+        "run_at": "${workload_path}/../Lib"
+      }
+    },
+    {
+      "Command": {
+        "command": "make",
         "args": [
-          "--print-version"
-        ]
+          "install"
+        ],
+        "run_at": "${workload_path}/../Lib"
       }
     }
   ],
