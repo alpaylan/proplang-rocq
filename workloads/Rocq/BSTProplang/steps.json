@@ -47,7 +47,9 @@
   "tags": {
     "generator": [
       "BespokeGenerator",
-      "CoverageGenerator"
+      "CoverageGenerator",
+      "TypeBasedGenerator",
+      "TypeBasedCoverageGenerator"
     ]
   }
 }
