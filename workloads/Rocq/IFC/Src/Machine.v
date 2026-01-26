@@ -46,7 +46,9 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpLab => ≪ TRUE , BOT , LabPC ≫
 (*!! OpLab_1 *)
-(*! | OpLab => ≪ TRUE , BOT , BOT ≫ *)
+(*!
+| OpLab => ≪ TRUE , BOT , BOT ≫
+*)
 (* !*)
 
 (* ---"OpMLab"--- *)
@@ -54,9 +56,13 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpMLab => ≪ TRUE , Lab1 , LabPC ≫
 (*!! OpMLab_1 *)
-(*! | OpMLab => ≪ TRUE , BOT , LabPC ≫ *)
+(*!
+| OpMLab => ≪ TRUE , BOT , LabPC ≫
+*)
 (*!! OpMLab_2 *)
-(*! | OpMLab => ≪ TRUE , Lab1 , BOT ≫ *)
+(*!
+| OpMLab => ≪ TRUE , Lab1 , BOT ≫
+*)
 (* !*)
 
 (* ---"OpPcLab"--- *)
@@ -64,7 +70,9 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpPcLab => ≪ TRUE , BOT , LabPC ≫
 (*!! OpPcLab_1 *)
-(*! | OpPcLab => ≪ TRUE , BOT , BOT ≫ *)
+(*!
+| OpPcLab => ≪ TRUE , BOT , BOT ≫
+*)
 (* !*)
 
 (* ---"OpBCall"--- *)
@@ -72,17 +80,29 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpBCall => ≪ TRUE , JOIN (Lab2) (LabPC) , JOIN (Lab1) (LabPC) ≫
 (*!! OpBCall_1 *)
-(*! | OpBCall => ≪ TRUE , BOT , JOIN (Lab1) (LabPC) ≫ *)
+(*!
+| OpBCall => ≪ TRUE , BOT , JOIN (Lab1) (LabPC) ≫
+*)
 (*!! OpBCall_2 *)
-(*! | OpBCall => ≪ TRUE , Lab2 , JOIN (Lab1) (LabPC) ≫ *)
+(*!
+| OpBCall => ≪ TRUE , Lab2 , JOIN (Lab1) (LabPC) ≫
+*)
 (*!! OpBCall_3 *)
-(*! | OpBCall => ≪ TRUE , LabPC , JOIN (Lab1) (LabPC) ≫ *)
+(*!
+| OpBCall => ≪ TRUE , LabPC , JOIN (Lab1) (LabPC) ≫
+*)
 (*!! OpBCall_4 *)
-(*! | OpBCall => ≪ TRUE , JOIN (Lab2) (LabPC) , BOT ≫ *)
+(*!
+| OpBCall => ≪ TRUE , JOIN (Lab2) (LabPC) , BOT ≫
+*)
 (*!! OpBCall_5 *)
-(*! | OpBCall => ≪ TRUE , JOIN (Lab2) (LabPC) , Lab1 ≫ *)
+(*!
+| OpBCall => ≪ TRUE , JOIN (Lab2) (LabPC) , Lab1 ≫
+*)
 (*!! OpBCall_6 *)
-(*! | OpBCall => ≪ TRUE , JOIN (Lab2) (LabPC) , LabPC ≫ *)
+(*!
+| OpBCall => ≪ TRUE , JOIN (Lab2) (LabPC) , LabPC ≫
+*)
 (* !*)
 
 (* ---"OpBRet"--- *)
@@ -90,27 +110,49 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (JOIN (Lab2) (Lab3)) , Lab2 , Lab3 ≫
 (*!! OpBRet_1 *)
-(*! | OpBRet => ≪ TRUE , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ TRUE , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_2 *)
-(*! | OpBRet => ≪ LE (Lab1) (Lab2) , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (Lab1) (Lab2) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_3 *)
-(*! | OpBRet => ≪ LE (Lab1) (Lab3) , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (Lab1) (Lab3) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_4 *)
-(*! | OpBRet => ≪ LE (Lab1) (JOIN (Lab2) (Lab3)) , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (Lab1) (JOIN (Lab2) (Lab3)) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_5 *)
-(*! | OpBRet => ≪ LE (LabPC) (Lab2) , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (LabPC) (Lab2) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_6 *)
-(*! | OpBRet => ≪ LE (LabPC) (Lab3) , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (LabPC) (Lab3) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_7 *)
-(*! | OpBRet => ≪ LE (LabPC) (JOIN (Lab2) (Lab3)) , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (LabPC) (JOIN (Lab2) (Lab3)) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_8 *)
-(*! | OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (Lab2) , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (Lab2) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_9 *)
-(*! | OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (Lab3) , Lab2 , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (Lab3) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_10 *)
-(*! | OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (JOIN (Lab2) (Lab3)) , BOT , Lab3 ≫ *)
+(*!
+| OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (JOIN (Lab2) (Lab3)) , BOT , Lab3 ≫
+*)
 (*!! OpBRet_11 *)
-(*! | OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (JOIN (Lab2) (Lab3)) , Lab2 , BOT ≫ *)
+(*!
+| OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (JOIN (Lab2) (Lab3)) , Lab2 , BOT ≫
+*)
 (* !*)
 
 (* ---"OpPutLab"--- *)
@@ -118,7 +160,9 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpPutLab => ≪ TRUE , BOT , LabPC ≫
 (*!! OpPutLab_1 *)
-(*! | OpPutLab => ≪ TRUE , BOT , BOT ≫ *)
+(*!
+| OpPutLab => ≪ TRUE , BOT , BOT ≫
+*)
 (* !*)
 
 (* ---"OpNop"--- *)
@@ -126,7 +170,9 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpNop => ≪ TRUE , __ , LabPC ≫
 (*!! OpNop_1 *)
-(*! | OpNop => ≪ TRUE , __ , BOT ≫ *)
+(*!
+| OpNop => ≪ TRUE , __ , BOT ≫
+*)
 (* !*)
 
 (* ---"OpPut"--- *)
@@ -134,7 +180,9 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpPut => ≪ TRUE , BOT , LabPC ≫
 (*!! OpPut_1 *)
-(*! | OpPut => ≪ TRUE , BOT , BOT ≫ *)
+(*!
+| OpPut => ≪ TRUE , BOT , BOT ≫
+*)
 (* !*)
 
 (* ---"OpBinOp"--- *)
@@ -142,13 +190,21 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpBinOp => ≪ TRUE , JOIN (Lab1) (Lab2) , LabPC ≫
 (*!! OpBinOp_1 *)
-(*! | OpBinOp => ≪ TRUE , BOT , LabPC ≫ *)
+(*!
+| OpBinOp => ≪ TRUE , BOT , LabPC ≫
+*)
 (*!! OpBinOp_2 *)
-(*! | OpBinOp => ≪ TRUE , Lab1 , LabPC ≫ *)
+(*!
+| OpBinOp => ≪ TRUE , Lab1 , LabPC ≫
+*)
 (*!! OpBinOp_3 *)
-(*! | OpBinOp => ≪ TRUE , Lab2 , LabPC ≫ *)
+(*!
+| OpBinOp => ≪ TRUE , Lab2 , LabPC ≫
+*)
 (*!! OpBinOp_4 *)
-(*! | OpBinOp => ≪ TRUE , JOIN (Lab1) (Lab2) , BOT ≫ *)
+(*!
+| OpBinOp => ≪ TRUE , JOIN (Lab1) (Lab2) , BOT ≫
+*)
 (* !*)
 
 (* ---"OpJump"--- *)
@@ -156,11 +212,17 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpJump => ≪ TRUE , __ , JOIN (LabPC) (Lab1) ≫
 (*!! OpJump_1 *)
-(*! | OpJump => ≪ TRUE , __ , BOT ≫ *)
+(*!
+| OpJump => ≪ TRUE , __ , BOT ≫
+*)
 (*!! OpJump_2 *)
-(*! | OpJump => ≪ TRUE , __ , LabPC ≫ *)
+(*!
+| OpJump => ≪ TRUE , __ , LabPC ≫
+*)
 (*!! OpJump_3 *)
-(*! | OpJump => ≪ TRUE , __ , Lab1 ≫ *)
+(*!
+| OpJump => ≪ TRUE , __ , Lab1 ≫
+*)
 (* !*)
 
 (* ---"OpBNZ"--- *)
@@ -168,11 +230,17 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpBNZ => ≪ TRUE , __ , JOIN (Lab1) (LabPC) ≫
 (*!! OpBNZ_1 *)
-(*! | OpBNZ => ≪ TRUE , __ , BOT ≫ *)
+(*!
+| OpBNZ => ≪ TRUE , __ , BOT ≫
+*)
 (*!! OpBNZ_2 *)
-(*! | OpBNZ => ≪ TRUE , __ , Lab1 ≫ *)
+(*!
+| OpBNZ => ≪ TRUE , __ , Lab1 ≫
+*)
 (*!! OpBNZ_3 *)
-(*! | OpBNZ => ≪ TRUE , __ , LabPC ≫ *)
+(*!
+| OpBNZ => ≪ TRUE , __ , LabPC ≫
+*)
 (* !*)
 
 (* ---"OpLoad"--- *)
@@ -180,13 +248,21 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpLoad => ≪ TRUE , Lab3 , JOIN (LabPC) (JOIN (Lab1) (Lab2)) ≫
 (*!! OpLoad_1 *)
-(*! | OpLoad => ≪ TRUE , BOT , JOIN (LabPC) (JOIN (Lab1) (Lab2)) ≫ *)
+(*!
+| OpLoad => ≪ TRUE , BOT , JOIN (LabPC) (JOIN (Lab1) (Lab2)) ≫
+*)
 (*!! OpLoad_2 *)
-(*! | OpLoad => ≪ TRUE , Lab3 , BOT ≫ *)
+(*!
+| OpLoad => ≪ TRUE , Lab3 , BOT ≫
+*)
 (*!! OpLoad_3 *)
-(*! | OpLoad => ≪ TRUE , Lab3 , LabPC ≫ *)
+(*!
+| OpLoad => ≪ TRUE , Lab3 , LabPC ≫
+*)
 (*!! OpLoad_4 *)
-(*! | OpLoad => ≪ TRUE , Lab3 , JOIN (Lab1) (Lab2) ≫ *)
+(*!
+| OpLoad => ≪ TRUE , Lab3 , JOIN (Lab1) (Lab2) ≫
+*)
 (* !*)
 
 (* ---"OpStore"--- *)
@@ -194,15 +270,25 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpStore => ≪ LE (JOIN (Lab1) (LabPC)) (Lab2) , Lab3 , LabPC ≫
 (*!! OpStore_1 *)
-(*! | OpStore => ≪ TRUE , Lab3 , LabPC ≫ *)
+(*!
+| OpStore => ≪ TRUE , Lab3 , LabPC ≫
+*)
 (*!! OpStore_2 *)
-(*! | OpStore => ≪ LE (Lab1) (Lab2) , Lab3 , LabPC ≫ *)
+(*!
+| OpStore => ≪ LE (Lab1) (Lab2) , Lab3 , LabPC ≫
+*)
 (*!! OpStore_3 *)
-(*! | OpStore => ≪ LE (LabPC) (Lab2) , Lab3 , LabPC ≫ *)
+(*!
+| OpStore => ≪ LE (LabPC) (Lab2) , Lab3 , LabPC ≫
+*)
 (*!! OpStore_4 *)
-(*! | OpStore => ≪ LE (JOIN (Lab1) (LabPC)) (Lab2) , BOT , LabPC ≫ *)
+(*!
+| OpStore => ≪ LE (JOIN (Lab1) (LabPC)) (Lab2) , BOT , LabPC ≫
+*)
 (*!! OpStore_5 *)
-(*! | OpStore => ≪ LE (JOIN (Lab1) (LabPC)) (Lab2) , Lab3 , BOT ≫ *)
+(*!
+| OpStore => ≪ LE (JOIN (Lab1) (LabPC)) (Lab2) , Lab3 , BOT ≫
+*)
 (* !*)
 
 (* ---"OpWrite"--- *)
@@ -210,27 +296,49 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (JOIN (Lab2) (Lab4)) , Lab4 , LabPC ≫
 (*!! OpWrite_1 *)
-(*! | OpWrite => ≪ TRUE , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ TRUE , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_2 *)
-(*! | OpWrite => ≪ LE (JOIN (LabPC) (Lab1)) (Lab2) , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (JOIN (LabPC) (Lab1)) (Lab2) , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_3 *)
-(*! | OpWrite => ≪ LE (JOIN (LabPC) (Lab1)) (Lab4) , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (JOIN (LabPC) (Lab1)) (Lab4) , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_4 *)
-(*! | OpWrite => ≪ LE (JOIN (LabPC) (Lab1)) (JOIN (Lab2) (Lab4)) , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (JOIN (LabPC) (Lab1)) (JOIN (Lab2) (Lab4)) , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_5 *)
-(*! | OpWrite => ≪ LE (Lab3) (Lab2) , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (Lab3) (Lab2) , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_6 *)
-(*! | OpWrite => ≪ LE (Lab3) (Lab4) , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (Lab3) (Lab4) , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_7 *)
-(*! | OpWrite => ≪ LE (Lab3) (JOIN (Lab2) (Lab4)) , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (Lab3) (JOIN (Lab2) (Lab4)) , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_8 *)
-(*! | OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (Lab2) , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (Lab2) , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_9 *)
-(*! | OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (Lab4) , Lab4 , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (Lab4) , Lab4 , LabPC ≫
+*)
 (*!! OpWrite_10 *)
-(*! | OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (JOIN (Lab2) (Lab4)) , BOT , LabPC ≫ *)
+(*!
+| OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (JOIN (Lab2) (Lab4)) , BOT , LabPC ≫
+*)
 (*!! OpWrite_11 *)
-(*! | OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (JOIN (Lab2) (Lab4)) , Lab4 , BOT ≫ *)
+(*!
+| OpWrite => ≪ LE (JOIN (JOIN (LabPC) (Lab1)) (Lab3)) (JOIN (Lab2) (Lab4)) , Lab4 , BOT ≫
+*)
 (* !*)
 
 (* ---"OpAlloc"--- *)
@@ -238,13 +346,21 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpAlloc => ≪ TRUE , JOIN (Lab1) (Lab2) , LabPC ≫
 (*!! OpAlloc_1 *)
-(*! | OpAlloc => ≪ TRUE , BOT , LabPC ≫ *)
+(*!
+| OpAlloc => ≪ TRUE , BOT , LabPC ≫
+*)
 (*!! OpAlloc_2 *)
-(*! | OpAlloc => ≪ TRUE , Lab1 , LabPC ≫ *)
+(*!
+| OpAlloc => ≪ TRUE , Lab1 , LabPC ≫
+*)
 (*!! OpAlloc_3 *)
-(*! | OpAlloc => ≪ TRUE , Lab2 , LabPC ≫ *)
+(*!
+| OpAlloc => ≪ TRUE , Lab2 , LabPC ≫
+*)
 (*!! OpAlloc_4 *)
-(*! | OpAlloc => ≪ TRUE , JOIN (Lab1) (Lab2) , BOT ≫ *)
+(*!
+| OpAlloc => ≪ TRUE , JOIN (Lab1) (Lab2) , BOT ≫
+*)
 (* !*)
 
 (* ---"OpPSetOff"--- *)
@@ -252,13 +368,21 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpPSetOff => ≪ TRUE , JOIN (Lab1) (Lab2) , LabPC ≫
 (*!! OpPSetOff_1 *)
-(*! | OpPSetOff => ≪ TRUE , BOT , LabPC ≫ *)
+(*!
+| OpPSetOff => ≪ TRUE , BOT , LabPC ≫
+*)
 (*!! OpPSetOff_2 *)
-(*! | OpPSetOff => ≪ TRUE , Lab1 , LabPC ≫ *)
+(*!
+| OpPSetOff => ≪ TRUE , Lab1 , LabPC ≫
+*)
 (*!! OpPSetOff_3 *)
-(*! | OpPSetOff => ≪ TRUE , Lab2 , LabPC ≫ *)
+(*!
+| OpPSetOff => ≪ TRUE , Lab2 , LabPC ≫
+*)
 (*!! OpPSetOff_4 *)
-(*! | OpPSetOff => ≪ TRUE , JOIN (Lab1) (Lab2) , BOT ≫ *)
+(*!
+| OpPSetOff => ≪ TRUE , JOIN (Lab1) (Lab2) , BOT ≫
+*)
 (* !*)
 
 (* ---"OpPGetOff"--- *)
@@ -266,9 +390,13 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpPGetOff => ≪ TRUE , Lab1 , LabPC ≫
 (*!! OpPGetOff_1 *)
-(*! | OpPGetOff => ≪ TRUE , BOT , LabPC ≫ *)
+(*!
+| OpPGetOff => ≪ TRUE , BOT , LabPC ≫
+*)
 (*!! OpPGetOff_2 *)
-(*! | OpPGetOff => ≪ TRUE , Lab1 , BOT ≫ *)
+(*!
+| OpPGetOff => ≪ TRUE , Lab1 , BOT ≫
+*)
 (* !*)
 
 (* ---"OpMSize"--- *)
@@ -276,13 +404,21 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpMSize => ≪ TRUE , Lab2 , JOIN (LabPC) (Lab1) ≫
 (*!! OpMSize_1 *)
-(*! | OpMSize => ≪ TRUE , BOT , JOIN (LabPC) (Lab1) ≫ *)
+(*!
+| OpMSize => ≪ TRUE , BOT , JOIN (LabPC) (Lab1) ≫
+*)
 (*!! OpMSize_2 *)
-(*! | OpMSize => ≪ TRUE , Lab2 , BOT ≫ *)
+(*!
+| OpMSize => ≪ TRUE , Lab2 , BOT ≫
+*)
 (*!! OpMSize_3 *)
-(*! | OpMSize => ≪ TRUE , Lab2 , LabPC ≫ *)
+(*!
+| OpMSize => ≪ TRUE , Lab2 , LabPC ≫
+*)
 (*!! OpMSize_4 *)
-(*! | OpMSize => ≪ TRUE , Lab2 , Lab1 ≫ *)
+(*!
+| OpMSize => ≪ TRUE , Lab2 , Lab1 ≫
+*)
 (* !*)
 
 (* ---"OpMov"--- *)
@@ -290,9 +426,13 @@ Definition default_table : table := fun op =>
 (*! *)
 | OpMov => ≪ TRUE , Lab1 , LabPC ≫
 (*!! OpMov_1 *)
-(*! | OpMov => ≪ TRUE , BOT , LabPC ≫ *)
+(*!
+| OpMov => ≪ TRUE , BOT , LabPC ≫
+*)
 (*!! OpMov_2 *)
-(*! | OpMov => ≪ TRUE , Lab1 , BOT ≫ *)
+(*!
+| OpMov => ≪ TRUE , Lab1 , BOT ≫
+*)
 (* !*)
 end.
 
