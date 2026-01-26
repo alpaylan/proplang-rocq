@@ -116,7 +116,7 @@ Inductive indistt : seq A -> seq A -> Prop :=
                  indistt t2 t1.
 
 Definition indisttb (t1 t2 : seq A) : bool :=
-  all id (map (prod_curry (indist o))
+  all id (map (fun xy => let '(x, y) := xy in indist o x y)
               (zip (filter (low o) t1) (filter (low o) t2))).
 
 Lemma indisttbtN t : indisttb t [::].

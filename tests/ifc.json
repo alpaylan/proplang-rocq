@@ -1,0 +1,1052 @@
+[
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpLab_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMLab_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMLab_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPcLab_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_5"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_6"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_5"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_6"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_7"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_8"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_9"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_10"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_11"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPutLab_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpNop_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPut_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBinOp_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBinOp_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBinOp_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBinOp_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpJump_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpJump_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpJump_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBNZ_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBNZ_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBNZ_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpLoad_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpLoad_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpLoad_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpLoad_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpStore_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpStore_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpStore_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpStore_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpStore_5"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_5"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_6"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_7"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_8"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_9"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_10"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_11"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpAlloc_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpAlloc_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpAlloc_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpAlloc_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPSetOff_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPSetOff_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPSetOff_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPSetOff_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPGetOff_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPGetOff_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMSize_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMSize_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMSize_3"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMSize_4"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMov_1"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMov_2"
+        ],
+        "trials": 10,
+        "timeout": 60,
+        "tasks": [
+            {
+                "strategy": "BespokeGenerator",
+                "property": "SSNI"
+            }
+        ]
+    }
+]

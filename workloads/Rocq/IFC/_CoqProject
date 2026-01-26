@@ -7,7 +7,7 @@ Src/Labels.v
 Src/Machine.v
 Src/Memory.v
 Src/Mutate.v
-Src/NIProof.v
+# Src/NIProof.v
 #Src/RelationExtraction.v
 Src/Rules.v
 Src/TestingCommon.v

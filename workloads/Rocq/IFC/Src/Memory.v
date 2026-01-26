@@ -1,6 +1,7 @@
 Require Import Datatypes.
 Require Import ZArith.
 Require Import Coq.Strings.String.
+Require Import Coq.Arith.PeanoNat.
 Require Import Lia.
 
 
@@ -9,6 +10,14 @@ From mathcomp Require Import ssreflect ssrfun ssrbool ssrnat eqtype seq.
 
 Require Import Utils Labels.
 Import LabelEqType.
+
+Lemma le_lt_or_eq : forall n m : nat, (n <= m)%coq_nat -> n < m \/ n = m.
+Proof.
+  intros n m Hle.
+  destruct (proj1 (Nat.lt_eq_cases n m) Hle) as [Hlt|Heq].
+  - left. apply/ltP. exact Hlt.
+  - right. exact Heq.
+Qed.
 
 Set Implicit Arguments.
 Unset Strict Implicit.
@@ -512,15 +521,10 @@ Proof.
       apply Z2Nat.inj_le in H1; try lia.
       apply Z2Nat.inj_le in Hle1; try lia.
       apply Z2Nat.inj_le in Hle2; try lia.
-      simpl in *. remember (Z.to_nat s) as start.
-      remember (Z.to_nat l) as len.
-      remember (Z.to_nat z) as z'. clear Heqlen l Heqstart s Heqz' z Hle1.
-      generalize dependent start. generalize dependent z'.
-      induction len as [| l IHl]; intros s start Hle1 Hle3.
-      + lia.
-      + simpl in *. apply le_lt_or_eq in Hle1. destruct Hle1 as [H1 | H2].
-        rewrite inE; apply/orP; right. apply IHl; try lia.
-        rewrite inE; apply/orP; left; apply/eqP; congruence.
+      rewrite mem_iota.
+      apply/andP; split.
+      + apply/leP. exact H1.
+      + apply/ltP. rewrite addnC. exact H2.
     - intros HIn. unfold Z_seq in HIn.
       move/mapP in HIn. destruct HIn as [z' HIn Heq]. subst.
       assert (H: Z.to_nat s <= z' < (Z.to_nat l) + (Z.to_nat s) ->

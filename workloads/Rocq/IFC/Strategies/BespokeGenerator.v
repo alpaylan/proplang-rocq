@@ -1,15 +1,21 @@
 From QuickChick Require Import QuickChick.
+Import QcDefaultNotation. Open Scope qc_scope.
 
 Require Import TestingCommon.
 Require Import Reachability.
 Require Import SSNI.
 Require Import SanityChecks.
+Require Import Shrinking.
+Require Import Printing.
 Require Import ZArith.
 
 From mathcomp Require Import ssreflect eqtype seq.
 Import LabelEqType.
 
+From PropLang Require Import PropLang.
+
 Local Open Scope nat_scope.
+Local Open Scope prop_scope.
 
 (* ------------------------------------------------------ *)
 (* ---------------- Constants --------------------------- *)
@@ -648,17 +654,29 @@ Derive GenSized for Variation.
 
 
 
- (* Todo:@akeles *)
-Definition gen_variation_copy : G (@Variation SState) :=
-  bindGen arbitrary (fun l  =>
-  bindGen arbitrary (fun st => 
-  returnGen (Var l st st))).
+(* PropLang definitions *)
 
+Axiom number_of_trials : nat.
+Extract Constant number_of_trials => "max_int".
 
-Definition test_propSSNI_smart :=
-  forAll gen_variation_SState (fun v =>
-    propSSNI_smart default_table v
-  ).
-  
-(*! QuickChick test_propSSNI_smart.  *)
+Definition shrink_variation (_ : ⟦∅⟧) (v : @Variation SState) : list (@Variation SState) :=
+  shrinkVSState v.
 
+Definition show_variation_fn (_ : ⟦∅⟧) (v : @Variation SState) : string := show v.
+
+Definition prop_SSNI :=
+  ForAll "v"
+    (fun _ => gen_variation_SState)
+    (fun _ _ => gen_variation_SState)
+    shrink_variation
+    show_variation_fn
+  (Check (@Variation SState · ∅)
+    (fun '(v, _) =>
+      match propSSNI_smart default_table v with
+      | Some true => true
+      | Some false => false
+      | None => true
+      end)).
+
+Definition test_prop_SSNI := runLoop number_of_trials prop_SSNI.
+(*! QuickProp test_prop_SSNI. *)

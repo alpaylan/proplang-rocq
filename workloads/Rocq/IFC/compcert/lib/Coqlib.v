@@ -420,6 +420,13 @@ Qed.
 
 (** Properties of Euclidean division and modulus. *)
 
+Lemma Z_div_mod_eq:
+  forall x y, y > 0 -> x = y * (x / y) + x mod y.
+Proof.
+  intros x y Hy.
+  apply Z.div_mod; lia.
+Qed.
+
 Lemma Zdiv_small:
   forall x y, 0 <= x < y -> x / y = 0.
 Proof.
@@ -1393,4 +1400,3 @@ Proof.
 Qed.
 
 End LEX_ORDER.
-

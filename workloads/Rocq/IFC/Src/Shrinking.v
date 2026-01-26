@@ -2,7 +2,7 @@
 Require Import ZArith.
 (*Require Import Coq.Strings.String.*)
 Require Import List. Import ListNotations.
-Require Import NPeano.
+Require Import Coq.Arith.PeanoNat.
 
 From QuickChick Require Import QuickChick.
 
@@ -370,4 +370,3 @@ Definition shrinkObsVar v :=
     let x := obsVarToVar v in
     map (varToObsVar mf fm1 fm2) (shrinkVSState x).
 *)
-
