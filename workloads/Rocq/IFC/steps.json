@@ -58,25 +58,13 @@
     }
   ],
   "tags": {
-    "BespokeGenerator": [
-      "generator"
-    ],
-    "SpecificationBasedGenerator": [
-      "generator"
-    ],
-    "TypeBasedGenerator": [
-      "generator"
-    ],
-    "TypeBasedFuzzer": [
-      "fuzzer"
-    ],
     "generator": [
       "BespokeGenerator",
-      "SpecificationBasedGenerator",
       "TypeBasedGenerator"
     ],
     "fuzzer": [
-      "TypeBasedFuzzer"
+      "TypeBasedFuzzer",
+      "VariationalFuzzer"
     ]
   }
 }
