@@ -1,4 +1,5 @@
 Require Import Coq.Strings.String.
+Require Import Coq.Strings.Ascii.
 Require Import MSetPositive.
 Require Import ZArith.
 Require Import Coq.Arith.PeanoNat.
@@ -158,6 +159,17 @@ Definition par (s : string) := "( " ++ s ++ " )".
 
 Definition show_variation (s1 s2 : string) :=
   "{ " ++ s1 ++ " / " ++ s2 ++ " }".
+
+Definition newline_char : ascii := Ascii.ascii_of_nat 10.
+Definition space_char : ascii := Ascii.ascii_of_nat 32.
+
+Fixpoint one_line (s : string) : string :=
+  match s with
+  | EmptyString => EmptyString
+  | String c rest =>
+      let c' := if Ascii.eqb c newline_char then space_char else c in
+      String c' (one_line rest)
+  end.
 
 Class ShowPair (A : Type) : Type :=
 {
@@ -359,7 +371,8 @@ Fixpoint show_low_stack_pair lab s1 s2 :=
 #[global] Instance show_variation_instance : Show Variation :=
 {|
   show v := let '(Var lab st1 st2) := v in
-            "Obs level:" ++ show lab ++ nl ++ show_pair lab st1 st2
+            "(counterexample (obs " ++ show lab
+            ++ ") (diff " ++ one_line (show_pair lab st1 st2) ++ "))"
 |}.
 
 Fixpoint show_execution (lab : Label)
