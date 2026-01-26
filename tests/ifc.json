@@ -15,6 +15,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -33,6 +41,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -53,6 +69,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -71,6 +95,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -91,6 +123,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -109,6 +149,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -129,6 +177,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -147,6 +203,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -167,6 +231,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -185,6 +257,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -205,6 +285,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -223,6 +311,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -243,6 +339,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -261,6 +365,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -281,6 +393,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -299,6 +419,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -319,6 +447,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -337,6 +473,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -357,6 +501,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -375,6 +527,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -395,6 +555,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -413,6 +581,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -433,6 +609,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -451,6 +635,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -471,6 +663,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -489,6 +689,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -509,6 +717,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -527,6 +743,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -547,6 +771,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -565,6 +797,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -585,6 +825,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -603,6 +851,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -623,6 +879,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -641,6 +905,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -661,6 +933,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -679,6 +959,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -699,6 +987,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -717,6 +1013,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -737,6 +1041,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -755,6 +1067,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -775,6 +1095,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -793,6 +1121,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -813,6 +1149,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -831,6 +1175,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -851,6 +1203,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -869,6 +1229,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -889,6 +1257,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -907,6 +1283,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -927,6 +1311,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -945,6 +1337,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -965,6 +1365,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -983,6 +1391,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1003,6 +1419,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1021,6 +1445,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1041,6 +1473,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1059,6 +1499,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1079,6 +1527,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1097,6 +1553,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1117,6 +1581,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1135,6 +1607,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1155,6 +1635,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1173,6 +1661,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1193,6 +1689,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1211,6 +1715,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1231,6 +1743,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1249,6 +1769,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1269,6 +1797,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1287,6 +1823,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
@@ -1307,6 +1851,14 @@
             {
                 "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
+                "property": "SSNI"
             }
         ]
     },
@@ -1325,6 +1877,14 @@
             },
             {
                 "strategy": "TypeBasedGenerator",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "TypeBasedFuzzer",
+                "property": "SSNI"
+            },
+            {
+                "strategy": "VariationalFuzzer",
                 "property": "SSNI"
             }
         ]
