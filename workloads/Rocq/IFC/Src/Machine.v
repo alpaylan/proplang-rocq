@@ -44,11 +44,11 @@ Definition default_table : table := fun op =>
 (* ---"OpLab"--- *)
 
 (*! *)
-(*!
 | OpLab => ≪ TRUE , BOT , LabPC ≫
-*)
 (*!! OpLab_1 *)
+(*!
 | OpLab => ≪ TRUE , BOT , BOT ≫
+*)
 (* !*)
 
 (* ---"OpMLab"--- *)
