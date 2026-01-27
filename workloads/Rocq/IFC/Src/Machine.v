@@ -44,11 +44,11 @@ Definition default_table : table := fun op =>
 (* ---"OpLab"--- *)
 
 (*! *)
-| OpLab => ≪ TRUE , BOT , LabPC ≫
-(*!! OpLab_1 *)
 (*!
-| OpLab => ≪ TRUE , BOT , BOT ≫
+| OpLab => ≪ TRUE , BOT , LabPC ≫
 *)
+(*!! OpLab_1 *)
+| OpLab => ≪ TRUE , BOT , BOT ≫
 (* !*)
 
 (* ---"OpMLab"--- *)
@@ -268,11 +268,11 @@ Definition default_table : table := fun op =>
 (* ---"OpStore"--- *)
 
 (*! *)
-(*!
 | OpStore => ≪ LE (JOIN (Lab1) (LabPC)) (Lab2) , Lab3 , LabPC ≫
-*)
 (*!! OpStore_1 *)
+(*!
 | OpStore => ≪ TRUE , Lab3 , LabPC ≫
+*)
 (*!! OpStore_2 *)
 (*!
 | OpStore => ≪ LE (Lab1) (Lab2) , Lab3 , LabPC ≫
