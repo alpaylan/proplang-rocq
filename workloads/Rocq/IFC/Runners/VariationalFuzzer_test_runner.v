@@ -5,7 +5,7 @@ Set Warnings "-extraction-opaque-accessed,-extraction".
 
 From IFC Require Import VariationalFuzzer.
 
-Definition qctest_test_prop_SSNI := (fun _ : unit => print_extracted_coq_string ("{" ++ show (withTime(fun tt => (invoke test_prop_SSNI))) ++ "}")).
+Definition qctest_test_prop_SSNI := (fun _ : unit => print_extracted_coq_string ("{" ++ show (withTime(fun tt => (invoke test_prop_SSNI))) ++ "}\n")).
 
 Parameter OCamlString : Type.
 Extract Constant OCamlString => "string".
