@@ -639,6 +639,99 @@ Definition gen_variation_SState : G (@Variation SState) :=
 |}.
 
 
+(** Begin: Generation by execution *)
+
+Definition instr_set (m:imem) (pc:Ptr_atom) (i : Instr) : option (seq (@Instr Label)) :=
+  let '(PAtm idx _) := pc in
+  update_list_Z m idx i.
+
+Fixpoint gen_by_exec (t : table) (fuel : nat) (st : SState) : G SState :=
+  let '(St im m stk rs (PAtm addr pcl)) := st in
+  match fuel with
+  | O => returnGen st
+  | S fuel' =>
+    match instr_lookup im (PAtm addr pcl) with
+    | Some Nop =>
+      (* If it is a noop, generate *)
+      bindGen (ainstrSSNI st) (fun i =>
+      match instr_set im (PAtm addr pcl) i with
+      | Some im' =>
+        let st' := St im' m stk rs (PAtm addr pcl) in
+        gen_by_exec t fuel' st'
+      | None => returnGen st
+      end)
+    | Some _ =>
+      (* Existing instruction, execute *)
+      match fstep t st with
+      | Some st' =>
+        gen_by_exec t fuel' st'
+      | None => returnGen st
+      end
+    | None =>
+      (* Out of bounds, terminate *)
+      returnGen st
+    end
+  end.
+
+Definition minFrameExec : Z := 4.
+Definition maxFrameExec : Z := 8.
+Fixpoint gen_init_mem_exec_helper (n : nat) (ml : memory * list (mframe * Z)) :=
+  match n with
+    | O    => returnGen ml
+    | S n' =>
+      let (m, l) := ml in
+      bindGen (choose (minFrameExec, maxFrameExec)) (fun frame_size =>
+      bindGen gen_label (fun lab =>
+         match (alloc frame_size lab bot (Vint Z0 @ bot) m) with
+           | Some (mf, m') =>
+             gen_init_mem_exec_helper n' (m', (mf,frame_size) :: l)
+           | None => gen_init_mem_exec_helper n' ml
+         end))
+  end.
+
+Definition minNoFrames := 2.
+Definition maxNoFrames := 4.
+Definition gen_init_exec_mem : G (memory * list (mframe * Z)):=
+  bindGen (choose (minNoFrames, maxNoFrames)) (fun no_frames =>
+  gen_init_mem_helper no_frames (Memory.empty Atom, [::])).
+
+Axiom gen_exec_fuel : nat.
+Extract Constant gen_exec_fuel => "30". 
+Definition gen_variation_exec_SState : G (@Variation SState) :=
+  (* Generate basic machine *)
+  (* Generate initial memory and dfs *)
+  bindGen gen_init_exec_mem (fun init_mem_info =>
+  let (init_mem, dfs) := init_mem_info in
+  (* Generate initial instruction list *)
+  let imem := nseq (C.code_len) Nop in
+  (* Create initial info - if this fails, fail the generation *)
+  match dfs with
+  | (def, _) :: _ =>
+      (* Change the default info: *)
+      let code_len : Z := 20%Z in
+      let no_regs := 10 in
+      let inf := MkInfo def code_len dfs no_regs in
+      (* Generate pc, registers and stack - all pointer stamps are bottom *)
+      bindGen (smart_gen inf) (fun pc =>
+      bindGen (smart_gen inf) (fun regs =>
+      bindGen (smart_gen_stack inf) (fun stk =>
+      (* Populate the memory - still all stamps are bottom *)
+      bindGen (populate_memory inf init_mem) (fun m =>
+      (* Instantiate instructions *)
+      let st := St imem m stk regs pc in
+      bindGen (instantiate_instructions st) (fun st =>
+      (* Instantiate stamps *)
+      let st := instantiate_stamps st in
+      (* Add Gen-by-exec *)
+      (* default table here? *)
+      bindGen (gen_by_exec default_table gen_exec_fuel st) (fun st => 
+      (* Create Variation *)
+      (* bindGen (gen_label_between_lax (get_stack_label stk) prins) (fun obs => *)
+      bindGen (gen_label_between_lax bot top) (fun obs =>
+      bindGen (smart_vary obs inf st) (fun st' =>
+      returnGen (Var obs st st')))))))))
+    | _ => returnGen (Var bot failed_SState failed_SState)
+  end).
 
 (* Arbitrary version *)
 
