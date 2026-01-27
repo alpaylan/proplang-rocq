@@ -13,10 +13,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -37,10 +33,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -67,10 +59,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -91,10 +79,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -121,10 +105,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -145,10 +125,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -175,10 +151,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -199,10 +171,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -229,10 +197,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -253,10 +217,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -283,10 +243,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -307,10 +263,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -337,10 +289,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -361,10 +309,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -391,10 +335,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -415,10 +355,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -445,10 +381,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -469,10 +401,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -499,10 +427,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -523,10 +447,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -553,10 +473,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -577,10 +493,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -607,10 +519,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -631,10 +539,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -661,10 +565,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -685,10 +585,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -715,10 +611,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -739,10 +631,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -769,10 +657,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -793,10 +677,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -823,10 +703,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -847,10 +723,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -877,10 +749,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -901,10 +769,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -931,10 +795,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -955,10 +815,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -985,10 +841,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1009,10 +861,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1039,10 +887,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1063,10 +907,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1093,10 +933,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1117,10 +953,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1147,10 +979,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1171,10 +999,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1201,10 +1025,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1225,10 +1045,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1255,10 +1071,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1279,10 +1091,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1309,10 +1117,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1333,10 +1137,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1363,10 +1163,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1387,10 +1183,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1417,10 +1209,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1441,10 +1229,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1471,10 +1255,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1495,10 +1275,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1525,10 +1301,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1549,10 +1321,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1579,10 +1347,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1603,10 +1367,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1633,10 +1393,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1657,10 +1413,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1687,10 +1439,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1711,10 +1459,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1741,10 +1485,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1765,10 +1505,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1795,10 +1531,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1819,10 +1551,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
@@ -1849,10 +1577,6 @@
                 "property": "SSNI"
             },
             {
-                "strategy": "TypeBasedGenerator",
-                "property": "SSNI"
-            },
-            {
                 "strategy": "TypeBasedFuzzer",
                 "property": "SSNI"
             },
@@ -1873,10 +1597,6 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
-                "property": "SSNI"
-            },
-            {
-                "strategy": "TypeBasedGenerator",
                 "property": "SSNI"
             },
             {
