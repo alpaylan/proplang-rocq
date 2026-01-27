@@ -39,11 +39,10 @@
         "options": {
           "fuzzer": {
             "Command": {
-              "command": "./main_exec",
+              "command": "${workload_path}//main_exec",
               "args": [
                 "\"${workload_path}/${strategy}_exec ${property}\""
-              ],
-              "run_at": "${workload_path}"
+              ]
             }
           },
           "generator": {
