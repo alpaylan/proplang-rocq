@@ -44,7 +44,7 @@ Definition targetLoop
                             end in
                 targetLoop' fuel' passed (discards + 1) seeds' poolType utility
             | Some input =>
-							let '(result, feedback) := instrumented_runner cprop with_instrumentation input in
+							let result := runner cprop input in
 							match result with
 							| Some false =>
 									(* Fails *)

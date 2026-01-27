@@ -61,7 +61,8 @@
   "tags": {
     "generator": [
       "BespokeGenerator",
-      "TypeBasedGenerator"
+      "TypeBasedGenerator",
+      "TargetedGenerator"
     ],
     "fuzzer": [
       "TypeBasedFuzzer",

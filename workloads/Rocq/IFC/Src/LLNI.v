@@ -26,7 +26,7 @@ Definition trace_indist (o : Label) (t1 t2 : list SState) : bool :=
   List.forallb id (List.map (fun sts => indist o (fst sts) (snd sts)) (List.combine low1 low2)).
 
 Axiom trace_fuel : nat.
-Extract Constant trace_fuel => "1000".
+Extract Constant trace_fuel => "10000".
 Fixpoint propLLNI (t : table) (v : Variation) : option bool :=
   let '(Var lab st1 st2) := v in
   if indist lab st1 st2 && well_formed st1 && well_formed st2 then
