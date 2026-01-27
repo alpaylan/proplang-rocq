@@ -54,15 +54,15 @@ Definition default_table : table := fun op =>
 (* ---"OpMLab"--- *)
 
 (*! *)
-(*!
 | OpMLab => ≪ TRUE , Lab1 , LabPC ≫
-*)
 (*!! OpMLab_1 *)
 (*!
 | OpMLab => ≪ TRUE , BOT , LabPC ≫
 *)
 (*!! OpMLab_2 *)
+(*!
 | OpMLab => ≪ TRUE , Lab1 , BOT ≫
+*)
 (* !*)
 
 (* ---"OpPcLab"--- *)
