@@ -41,7 +41,7 @@
             "Command": {
               "command": "./main_exec",
               "args": [
-                "\"./${strategy}_exec ${property}\""
+                "\"${workload_path}/${strategy}_exec ${property}\""
               ],
               "run_at": "${workload_path}"
             }
