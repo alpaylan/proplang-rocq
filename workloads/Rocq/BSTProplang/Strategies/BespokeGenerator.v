@@ -65,7 +65,7 @@ Derive (Show) for Tree.
 Proof. dec_eq. Defined.
 
 Axiom number_of_trials : nat.
-Extract Constant number_of_trials => "10000".
+Extract Constant number_of_trials => "max_int".
 
 Axiom Time : Type.
 Extract Constant Time => "int".
