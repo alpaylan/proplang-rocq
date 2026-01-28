@@ -10,6 +10,10 @@
         "tasks": [
             {
                 "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
+                "strategy": "BespokeGenerator",
                 "property": "LLNI"
             },
             {
@@ -36,6 +40,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -57,6 +65,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -82,6 +94,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -103,6 +119,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -128,6 +148,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -149,6 +173,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -174,6 +202,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -195,6 +227,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -220,6 +256,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -241,6 +281,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -266,6 +310,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -287,6 +335,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -312,6 +364,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -333,6 +389,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -358,6 +418,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -379,6 +443,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -404,6 +472,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -425,6 +497,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -450,6 +526,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -471,6 +551,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -496,6 +580,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -517,6 +605,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -542,6 +634,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -563,6 +659,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -588,6 +688,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -609,6 +713,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
@@ -634,6 +742,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -657,6 +769,10 @@
                 "property": "LLNI"
             },
             {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
+            },
+            {
                 "strategy": "TargetedGenerator",
                 "property": "LLNI"
             },
@@ -678,6 +794,10 @@
             {
                 "strategy": "BespokeGenerator",
                 "property": "LLNI"
+            },
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI_exec"
             },
             {
                 "strategy": "TargetedGenerator",
