@@ -2,331 +2,691 @@
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBCall_1"],
+        "mutations": [
+            "OpBCall_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBCall_2"],
+        "mutations": [
+            "OpBCall_2"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBCall_3"],
+        "mutations": [
+            "OpBCall_3"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBCall_4"],
+        "mutations": [
+            "OpBCall_4"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBCall_5"],
+        "mutations": [
+            "OpBCall_5"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBCall_6"],
+        "mutations": [
+            "OpBCall_6"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBRet_1"],
+        "mutations": [
+            "OpBRet_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBRet_2"],
+        "mutations": [
+            "OpBRet_2"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBRet_3"],
+        "mutations": [
+            "OpBRet_3"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBRet_4"],
+        "mutations": [
+            "OpBRet_4"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBRet_5"],
+        "mutations": [
+            "OpBRet_5"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpJump_1"],
+        "mutations": [
+            "OpJump_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpJump_2"],
+        "mutations": [
+            "OpJump_2"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpJump_3"],
+        "mutations": [
+            "OpJump_3"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBNZ_1"],
+        "mutations": [
+            "OpBNZ_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBNZ_2"],
+        "mutations": [
+            "OpBNZ_2"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpBNZ_3"],
+        "mutations": [
+            "OpBNZ_3"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpStore_1"],
+        "mutations": [
+            "OpStore_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpStore_2"],
+        "mutations": [
+            "OpStore_2"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpStore_3"],
+        "mutations": [
+            "OpStore_3"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpWrite_1"],
+        "mutations": [
+            "OpWrite_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpWrite_2"],
+        "mutations": [
+            "OpWrite_2"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpWrite_3"],
+        "mutations": [
+            "OpWrite_3"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpLoad_1"],
+        "mutations": [
+            "OpLoad_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpLoad_2"],
+        "mutations": [
+            "OpLoad_2"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpAlloc_1"],
+        "mutations": [
+            "OpAlloc_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpAlloc_2"],
+        "mutations": [
+            "OpAlloc_2"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpLab_1"],
+        "mutations": [
+            "OpLab_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpMLab_1"],
+        "mutations": [
+            "OpMLab_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     },
     {
         "language": "Rocq",
         "workload": "IFC",
-        "mutations": ["OpPcLab_1"],
+        "mutations": [
+            "OpPcLab_1"
+        ],
         "trials": 10,
         "timeout": 60,
         "tasks": [
-            {"strategy": "TargetedGenerator", "property": "LLNI"},
-            {"strategy": "TargetedGenerator", "property": "LLNI_hybrid"}
+            {
+                "strategy": "BespokeGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI"
+            },
+            {
+                "strategy": "TargetedGenerator",
+                "property": "LLNI_hybrid"
+            }
         ]
     }
 ]
