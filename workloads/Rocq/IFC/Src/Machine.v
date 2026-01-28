@@ -78,15 +78,15 @@ Definition default_table : table := fun op =>
 (* ---"OpBCall"--- *)
 
 (*! *)
+(*!
 | OpBCall => ≪ TRUE , JOIN (Lab2) (LabPC) , JOIN (Lab1) (LabPC) ≫
+*)
 (*!! OpBCall_1 *)
 (*!
 | OpBCall => ≪ TRUE , BOT , JOIN (Lab1) (LabPC) ≫
 *)
 (*!! OpBCall_2 *)
-(*!
 | OpBCall => ≪ TRUE , Lab2 , JOIN (Lab1) (LabPC) ≫
-*)
 (*!! OpBCall_3 *)
 (*!
 | OpBCall => ≪ TRUE , LabPC , JOIN (Lab1) (LabPC) ≫
