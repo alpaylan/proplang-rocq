@@ -7,6 +7,7 @@ From IFC Require Import BespokeGenerator.
 
 Definition qctest_test_prop_SSNI := (fun _ : unit => print_extracted_coq_string ("{" ++ show (withTime(fun tt => (invoke test_prop_SSNI))) ++ "}")).
 Definition qctest_test_prop_LLNI := (fun _ : unit => print_extracted_coq_string ("{" ++ show (withTime(fun tt => (invoke test_prop_LLNI))) ++ "}")).
+Definition qctest_test_prop_LLNI_exec := (fun _ : unit => print_extracted_coq_string ("{" ++ show (withTime(fun tt => (invoke test_prop_LLNI_exec))) ++ "}")).
 
 Parameter OCamlString : Type.
 Extract Constant OCamlString => "string".
@@ -16,7 +17,8 @@ Extract Constant qctest_map => "
 fun test_name ->
   let test_map = [
     (""SSNI"", qctest_test_prop_SSNI);
-    (""LLNI"", qctest_test_prop_LLNI)
+    (""LLNI"", qctest_test_prop_LLNI);
+    (""LLNI_exec"", qctest_test_prop_LLNI_exec)
   ] in
   let test = List.assoc test_name test_map in
   test ()
@@ -25,4 +27,4 @@ let () =
 Sys.argv.(1) |> qctest_map
 ".
 
-Extraction "BespokeGenerator_test_runner.ml" sample1 runLoop qctest_test_prop_SSNI qctest_test_prop_LLNI qctest_map.
+Extraction "BespokeGenerator_test_runner.ml" sample1 runLoop qctest_test_prop_SSNI qctest_test_prop_LLNI qctest_test_prop_LLNI_exec qctest_map.

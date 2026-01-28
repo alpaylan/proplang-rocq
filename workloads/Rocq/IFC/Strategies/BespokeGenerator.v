@@ -697,7 +697,7 @@ Definition gen_init_exec_mem : G (memory * list (mframe * Z)):=
   gen_init_mem_helper no_frames (Memory.empty Atom, [::])).
 
 Axiom gen_exec_fuel : nat.
-Extract Constant gen_exec_fuel => "30". 
+Extract Constant gen_exec_fuel => "30".
 Definition gen_variation_exec_SState : G (@Variation SState) :=
   (* Generate basic machine *)
   (* Generate initial memory and dfs *)
@@ -723,14 +723,17 @@ Definition gen_variation_exec_SState : G (@Variation SState) :=
       bindGen (instantiate_instructions st) (fun st =>
       (* Instantiate stamps *)
       let st := instantiate_stamps st in
-      (* Add Gen-by-exec *)
-      (* default table here? *)
-      bindGen (gen_by_exec default_table gen_exec_fuel st) (fun st => 
+      (* Save initial state before gen_by_exec modifies it *)
+      let '(St init_imem init_m init_stk init_regs init_pc) := st in
+      (* Add Gen-by-exec - generates instructions during execution *)
+      bindGen (gen_by_exec default_table gen_exec_fuel st) (fun st_final =>
+      (* Extract just the imem from final state, reset everything else to initial *)
+      let '(St final_imem _ _ _ _) := st_final in
+      let st_with_exec_imem := St final_imem init_m init_stk init_regs init_pc in
       (* Create Variation *)
-      (* bindGen (gen_label_between_lax (get_stack_label stk) prins) (fun obs => *)
       bindGen (gen_label_between_lax bot top) (fun obs =>
-      bindGen (smart_vary obs inf st) (fun st' =>
-      returnGen (Var obs st st')))))))))
+      bindGen (smart_vary obs inf st_with_exec_imem) (fun st' =>
+      returnGen (Var obs st_with_exec_imem st')))))))))
     | _ => returnGen (Var bot failed_SState failed_SState)
   end).
 
@@ -790,5 +793,22 @@ Definition prop_LLNI :=
       end)).
 
 Definition test_prop_LLNI := runLoop number_of_trials prop_LLNI.
+
+(* LLNI with generation-by-execution - generates instructions during execution *)
+Definition prop_LLNI_exec :=
+  ForAll "v"
+    (fun _ => gen_variation_exec_SState)
+    (fun _ _ => gen_variation_exec_SState)
+    shrink_variation
+    show_variation_fn
+  (Check (@Variation SState · ∅)
+    (fun '(v, _) =>
+      match propLLNI default_table v with
+      | Some true => true
+      | Some false => false
+      | None => true
+      end)).
+
+Definition test_prop_LLNI_exec := runLoop number_of_trials prop_LLNI_exec.
 
 (*! QuickProp test_prop_SSNI. *)

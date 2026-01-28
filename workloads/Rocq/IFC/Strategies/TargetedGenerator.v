@@ -554,6 +554,120 @@ Definition feedback_function (_ : ⟦∅⟧) (v : @Variation SState) : Z :=
   feedback_fn v.
 
 (* ------------------------------------------------------ *)
+(* -------- Gen-by-Exec Integration --------------------- *)
+(* ------------------------------------------------------ *)
+
+(* Helper: set instruction at PC location *)
+Definition instr_set (m:imem) (pc:Ptr_atom) (i : Instr) : option (seq (@Instr Label)) :=
+  let '(PAtm idx _) := pc in
+  update_list_Z m idx i.
+
+(* Gen-by-exec: generates instructions during execution *)
+(* This is adapted from BespokeGenerator.v *)
+Fixpoint gen_by_exec (t : table) (fuel : nat) (st : SState) : G SState :=
+  let '(St im m stk rs (PAtm addr pcl)) := st in
+  match fuel with
+  | O => returnGen st
+  | S fuel' =>
+    match instr_lookup im (PAtm addr pcl) with
+    | Some Nop =>
+      (* If it is a noop, generate *)
+      bindGen (ainstrSSNI st) (fun i =>
+      match instr_set im (PAtm addr pcl) i with
+      | Some im' =>
+        let st' := St im' m stk rs (PAtm addr pcl) in
+        gen_by_exec t fuel' st'
+      | None => returnGen st
+      end)
+    | Some _ =>
+      (* Existing instruction, execute *)
+      match fstep t st with
+      | Some st' =>
+        gen_by_exec t fuel' st'
+      | None => returnGen st
+      end
+    | None =>
+      (* Out of bounds, terminate *)
+      returnGen st
+    end
+  end.
+
+Axiom gen_exec_fuel : nat.
+Extract Constant gen_exec_fuel => "30".
+
+(* Execute for N steps and return intermediate state *)
+Definition trace_n (n : nat) (t : table) (st : SState) : option (SState * nat) :=
+  let fix go fuel current steps :=
+    match fuel with
+    | O => Some (current, steps)
+    | S fuel' =>
+      match fstep t current with
+      | Some next => go fuel' next (S steps)
+      | None => Some (current, steps)
+      end
+    end
+  in go n st 0.
+
+(* Mutate by executing and generating instructions at Nop slots *)
+(* Apply gen-by-exec directly to the state to fill Nop slots along *)
+(* the execution path, then reset to original state with new imem *)
+Definition mutate_by_exec (st : SState) : G SState :=
+  (* Apply gen-by-exec directly from the original state *)
+  (* This fills Nop slots during execution, generating instructions *)
+  (* that are valid for the actual execution path from this state *)
+  bindGen (gen_by_exec default_table gen_exec_fuel st) (fun st_exec =>
+  (* Extract instruction memory with filled Nops *)
+  let '(St exec_imem _ _ _ _) := st_exec in
+  (* Reset to original state but with the new instruction memory *)
+  let '(St _ orig_m orig_stk orig_regs orig_pc) := st in
+  returnGen (St exec_imem orig_m orig_stk orig_regs orig_pc)).
+
+(* Hybrid mutator: combines gen-by-exec with smart mutation *)
+(* 70% gen-by-exec, 30% original smart mutation *)
+Definition mutate_variation_hybrid (ctx : ⟦∅⟧) (v : @Variation SState)
+  : G (@Variation SState) :=
+  let '(Var obs st1 st2) := v in
+  let inf := info_from_state st1 in
+  freq_ (mutate_variation_for_length ctx v) [::
+    (3, mutate_variation_for_length ctx v);   (* Original: 30% *)
+    (7, bindGen (mutate_by_exec st1) (fun st1' =>  (* Gen-by-exec: 70% *)
+        bindGen (smart_vary obs inf st1') (fun st2' =>
+        returnGen (Var obs st1' st2'))))
+  ].
+
+(* Generate initial seeds using gen-by-exec - keeps final state *)
+(* Unlike BespokeGenerator's version which resets state, this keeps *)
+(* the final execution state to provide meaningful starting points *)
+Definition gen_init_exec_mem : G (memory * list (mframe * Z)):=
+  bindGen (choose (2, 4)) (fun no_frames =>
+  gen_init_mem_helper no_frames (Memory.empty Atom, [::])).
+
+Definition gen_variation_exec_final : G (@Variation SState) :=
+  bindGen gen_init_exec_mem (fun init_mem_info =>
+  let (init_mem, dfs) := init_mem_info in
+  let imem := nseq (C.code_len) Nop in
+  match dfs with
+  | (def, _) :: _ =>
+      let code_len : Z := Z.of_nat C.code_len in
+      let no_regs := C.no_registers in
+      let inf := MkInfo def code_len dfs no_regs in
+      bindGen (smart_gen inf) (fun pc =>
+      bindGen (smart_gen inf) (fun regs =>
+      bindGen (smart_gen_stack inf) (fun stk =>
+      bindGen (populate_memory inf init_mem) (fun m =>
+      let st := St imem m stk regs pc in
+      bindGen (instantiate_instructions st) (fun st =>
+      let st := instantiate_stamps st in
+      (* Apply gen-by-exec and KEEP the final state *)
+      bindGen (gen_by_exec default_table gen_exec_fuel st) (fun st_final =>
+      bindGen (gen_label_between_lax bot top) (fun obs =>
+      (* Use original inf - it has valid frame info from initial memory *)
+      bindGen (smart_vary obs inf st_final) (fun st' =>
+      returnGen (Var obs st_final st')))))))))
+    | _ => returnGen (Var bot failed_SState failed_SState)
+  end).
+
+(* ------------------------------------------------------ *)
 (* -------- PropLang Definitions ------------------------ *)
 (* ------------------------------------------------------ *)
 
@@ -608,5 +722,31 @@ Definition prop_SSNI :=
       end)).
 
 Definition test_prop_SSNI := runLoop number_of_trials prop_SSNI.
+
+(* Hybrid LLNI: uses regular generator for seeds but hybrid mutation *)
+(* The key insight is that gen-by-exec works as a MUTATION operator *)
+(* on existing good seeds, not as an initial generator *)
+Definition prop_LLNI_hybrid :=
+  ForAll "v"
+    (fun _ => gen_variation_SState)           (* Regular initial generator *)
+    mutate_variation_hybrid                   (* Use hybrid mutator (70% exec) *)
+    shrink_variation
+    show_variation_fn
+  (Check (@Variation SState · ∅)
+    (fun '(v, _) =>
+      match propLLNI default_table v with
+      | Some true => true
+      | Some false => false
+      | None => true
+      end)).
+
+(* Targeted test runner for hybrid approach *)
+Definition test_prop_LLNI_hybrid :=
+  targetLoop
+    number_of_trials
+    prop_LLNI_hybrid
+    (fun input => feedback_fn (fst input))
+    (FIFOSeedPool.(mkPool) tt)
+    HillClimbingUtility.
 
 (*! QuickProp test_prop_LLNI. *)
