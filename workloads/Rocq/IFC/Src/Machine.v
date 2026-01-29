@@ -108,9 +108,7 @@ Definition default_table : table := fun op =>
 (* ---"OpBRet"--- *)
 
 (*! *)
-(*!
 | OpBRet => ≪ LE (JOIN (Lab1) (LabPC)) (JOIN (Lab2) (Lab3)) , Lab2 , Lab3 ≫
-*)
 (*!! OpBRet_1 *)
 (*!
 | OpBRet => ≪ TRUE , Lab2 , Lab3 ≫
@@ -124,7 +122,9 @@ Definition default_table : table := fun op =>
 | OpBRet => ≪ LE (Lab1) (Lab3) , Lab2 , Lab3 ≫
 *)
 (*!! OpBRet_4 *)
+(*!
 | OpBRet => ≪ LE (Lab1) (JOIN (Lab2) (Lab3)) , Lab2 , Lab3 ≫
+*)
 (*!! OpBRet_5 *)
 (*!
 | OpBRet => ≪ LE (LabPC) (Lab2) , Lab2 , Lab3 ≫
