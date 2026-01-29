@@ -668,6 +668,96 @@ Definition gen_variation_exec_final : G (@Variation SState) :=
   end).
 
 (* ------------------------------------------------------ *)
+(* -------- Mutation for Instruction Coverage ----------- *)
+(* ------------------------------------------------------ *)
+
+(* Instruction types grouped by behavior for diversity mutation *)
+Definition control_flow_instrs : list nat := [:: 5; 6; 7; 8]. (* BNZ, Jump, BCall, BRet weights *)
+Definition memory_instrs : list nat := [:: 9; 10; 11; 12].    (* Load, Store, Write, Alloc *)
+Definition arithmetic_instrs : list nat := [:: 13; 14].        (* BinOp, Mov *)
+Definition label_instrs : list nat := [:: 15; 16; 17].         (* Lab, PcLab, PutLab, MLab *)
+
+(* Generate instruction with bias toward a specific category *)
+Definition gen_diverse_instr (st : SState) : G Instr :=
+  let '(St im m stk regs pc ) := st in
+  let '(dptr, cptr, num, lab) :=
+      groupRegisters st regs [::] [::] [::] [::] Z0 in
+  let genRegPtr := gen_from_length (Zlength regs) in
+  (* Bias toward less common instructions to increase diversity *)
+  freq_ (pure Nop) [::
+    (* Increased weight for control flow *)
+    (3, pure Nop);
+    (* Memory operations - important for IFC *)
+    (onNonEmpty dptr 20, liftGen2 Load (elems_ Z0 dptr) genRegPtr);
+    (onNonEmpty dptr 100, liftGen2 Store (elems_ Z0 dptr) genRegPtr);
+    (onNonEmpty dptr 100, liftGen2 Write (elems_ Z0 dptr) genRegPtr);
+    (150 * onNonEmpty num 1 * onNonEmpty lab 1,
+     liftGen3 Alloc (elems_ Z0 num) (elems_ Z0 lab) genRegPtr);
+    (* Control flow - critical for finding IFC bugs *)
+    (30 * onNonEmpty cptr 1 * onNonEmpty lab 1,
+     liftGen3 BCall (elems_ Z0 cptr) (elems_ Z0 lab) genRegPtr);
+    (if negb (emptyList (unStack stk)) then 80 else 0, pure BRet);
+    (onNonEmpty cptr 30, liftGen Jump (elems_ Z0 cptr));
+    (onNonEmpty num 40,
+      liftGen2 BNZ (choose (Zminus (0%Z) (1%Z), 2%Z))
+                   (elems_ Z0 num));
+    (* Label operations - important for testing label handling *)
+    (15, liftGen PcLab genRegPtr);
+    (15, liftGen2 Lab genRegPtr genRegPtr);
+    (onNonEmpty dptr 15, liftGen2 MLab (elems_ Z0 dptr) genRegPtr);
+    (15, liftGen2 PutLab gen_label genRegPtr);
+    (* Arithmetic and pointer ops *)
+    (onNonEmpty num 15,
+     liftGen4 BinOp gen_BinOpT (elems_ Z0 num)
+              (elems_ Z0 num) genRegPtr);
+    (15 * onNonEmpty dptr 1 * onNonEmpty num 1,
+     liftGen3 PSetOff (elems_ Z0 dptr) (elems_ Z0 num) genRegPtr);
+    (onNonEmpty dptr 15, liftGen2 PGetOff (elems_ Z0 dptr) genRegPtr);
+    (onNonEmpty dptr 15, liftGen2 MSize (elems_ Z0 dptr) genRegPtr);
+    (* Basic ops *)
+    (15, liftGen2 Put arbitrary genRegPtr);
+    (15, liftGen2 Mov genRegPtr genRegPtr)
+  ].
+
+(* Mutate instruction memory to increase instruction diversity *)
+Definition mutate_imem_for_diversity (imem : list (@Instr Label)) (st : SState)
+  : G (list (@Instr Label)) :=
+  freq_ (pure imem)
+        [:: (* Strategy 1: Replace some instructions with diverse new ones *)
+            (5, sequenceGen (map (fun i =>
+                  freq_ (pure i) [::
+                    (7, pure i);
+                    (3, gen_diverse_instr st)]) imem));
+            (* Strategy 2: Generate entirely new diverse instruction sequence *)
+            (4, bindGen (gen_diverse_instr st) (fun instr =>
+                 pure (nseq (List.length imem) instr)));
+            (* Strategy 3: Keep original *)
+            (1, pure imem)].
+
+(* Mutate state to encourage instruction diversity *)
+Definition mutate_state_for_diversity (st : SState) : G SState :=
+  let '(St im m s r pc) := st in
+  let inf := info_from_state st in
+  (* Mutate instruction memory for diversity *)
+  bindGen (mutate_imem_for_diversity im st) (fun im' =>
+  (* Sometimes refresh registers to enable different instruction types *)
+  bindGen (freq_ (pure r)
+             [:: (6, pure r);
+                 (4, vectorOf (List.length r) (smart_gen inf))]) (fun r' =>
+  returnGen (St im' m s r' pc))).
+
+(* Main mutator for instruction coverage: mutate to increase instruction diversity *)
+Definition mutate_variation_for_instruction_coverage (_ : ⟦∅⟧) (v : @Variation SState)
+  : G (@Variation SState) :=
+  let '(Var obs st1 st2) := v in
+  let inf := info_from_state st1 in
+  (* Mutate st1 for diversity *)
+  bindGen (mutate_state_for_diversity st1) (fun st1' =>
+  (* Generate matching variation of st2 that stays indistinguishable *)
+  bindGen (smart_vary obs inf st1') (fun st2' =>
+  returnGen (Var obs st1' st2'))).
+
+(* ------------------------------------------------------ *)
 (* -------- PropLang Definitions ------------------------ *)
 (* ------------------------------------------------------ *)
 

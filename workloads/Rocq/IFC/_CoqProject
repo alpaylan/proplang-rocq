@@ -19,6 +19,7 @@ Src/Shrinking.v
 Src/SingleStateArb.v
 Src/SSNI.v
 Src/LLNI.v
+Src/InstrCoverage.v
 #SSNICheckerProofs.v
 Src/NotionsOfNI.v
 Strategies/BespokeGenerator.v
@@ -26,9 +27,20 @@ Strategies/TypeBasedGenerator.v
 Strategies/TypeBasedFuzzer.v
 Strategies/VariationalFuzzer.v
 Strategies/TargetedGenerator.v
+Strategies/ThinningGenerator.v
+Strategies/UnifiedStrategies.v
 #Driver.v -- run `make tests` for this
 Runners/TypeBasedGenerator_test_runner.v
 Runners/BespokeGenerator_test_runner.v
 Runners/TypeBasedFuzzer_test_runner.v
 Runners/VariationalFuzzer_test_runner.v
 Runners/TargetedGenerator_test_runner.v
+Runners/UnifiedStrategies_test_runner.v
+Runners/RunLoop_Gen_test_runner.v
+Runners/RunLoop_GenExec_test_runner.v
+Runners/TargetLoop_Gen_Length_test_runner.v
+Runners/TargetLoop_Gen_InstrCov_test_runner.v
+Runners/TargetLoop_GenExec_Length_test_runner.v
+Runners/TargetLoop_GenExec_InstrCov_test_runner.v
+Runners/ThinLoop_Gen_InstrCov_test_runner.v
+Runners/ThinLoop_GenExec_InstrCov_test_runner.v

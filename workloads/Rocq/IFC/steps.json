@@ -62,7 +62,15 @@
     "generator": [
       "BespokeGenerator",
       "TypeBasedGenerator",
-      "TargetedGenerator"
+      "TargetedGenerator",
+      "RunLoop_Gen",
+      "RunLoop_GenExec",
+      "TargetLoop_Gen_Length",
+      "TargetLoop_Gen_InstrCov",
+      "TargetLoop_GenExec_Length",
+      "TargetLoop_GenExec_InstrCov",
+      "ThinLoop_Gen_InstrCov",
+      "ThinLoop_GenExec_InstrCov"
     ],
     "fuzzer": [
       "TypeBasedFuzzer",

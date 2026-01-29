@@ -1,0 +1,572 @@
+[
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_2"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_3"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_4"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_5"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBCall_6"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_2"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_3"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_4"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBRet_5"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpJump_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpJump_2"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpJump_3"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBNZ_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBNZ_2"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpBNZ_3"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpStore_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpStore_2"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpStore_3"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_2"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpWrite_3"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpLoad_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpLoad_2"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpAlloc_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpAlloc_2"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpLab_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpMLab_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    },
+    {
+        "language": "Rocq",
+        "workload": "IFC",
+        "mutations": [
+            "OpPcLab_1"
+        ],
+        "trials": 10,
+        "timeout": 120,
+        "tasks": [
+            {"strategy": "RunLoop_Gen", "property": "LLNI"},
+            {"strategy": "RunLoop_GenExec", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_Length", "property": "LLNI"},
+            {"strategy": "TargetLoop_GenExec_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_Gen_InstrCov", "property": "LLNI"},
+            {"strategy": "ThinLoop_GenExec_InstrCov", "property": "LLNI"}
+        ]
+    }
+]
